@@ -7,9 +7,9 @@ import requests
 app = FastAPI(title="API AI Sentuh Tanahku (RAG Mode)")
 
 # Konfigurasi Kunci dari Environment Variables
-GEMINI_API_KEY = os.environ.get("AIzaSyA9k21yPFqTkX2YMU8IeIH2ew2RJ5S9G2o")
-SUPABASE_URL = os.environ.get("https://hzmlxnsnuycvqkpetxhe.supabase.co")
-SUPABASE_KEY = os.environ.get("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6bWx4bnNudXljdnFrcGV0eGhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzNDM1ODQsImV4cCI6MjA4NjkxOTU4NH0.0ahv8dGihy3EtCeR-NTPUuh4faW8lnJyq-laH7KGxW0")
+SUPABASE_URL = "https://hzmlxnsnuycvqkpetxhe.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6bWx4bnNudXljdnFrcGV0eGhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzNDM1ODQsImV4cCI6MjA4NjkxOTU4NH0.0ahv8dGihy3EtCeR-NTPUuh4faW8lnJyq-laH7KGxW0"
+GEMINI_API_KEY = "AIzaSyA9k21yPFqTkX2YMU8IeIH2ew2RJ5S9G2o"
 
 class ChatRequest(BaseModel):
     pesan: str
