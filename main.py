@@ -11,6 +11,10 @@ SUPABASE_URL = "https://hzmlxnsnuycvqkpetxhe.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6bWx4bnNudXljdnFrcGV0eGhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzNDM1ODQsImV4cCI6MjA4NjkxOTU4NH0.0ahv8dGihy3EtCeR-NTPUuh4faW8lnJyq-laH7KGxW0"
 GEMINI_API_KEY = "AIzaSyA9k21yPFqTkX2YMU8IeIH2ew2RJ5S9G2o"
 
+# GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+# SUPABASE_URL = os.environ.get("SUPABASE_URL")
+# SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
+
 class ChatRequest(BaseModel):
     pesan: str
     session_id: str
@@ -65,7 +69,7 @@ def chat_endpoint(request: ChatRequest):
         """
 
         ai_response = client.models.generate_content(
-            model='gemini-2.0-flash',
+            model='gemini-1.5-flash',
             contents=prompt_sistem
         )
 
