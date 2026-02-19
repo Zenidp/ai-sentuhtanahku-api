@@ -15,7 +15,7 @@ app = FastAPI(title="API AI Sentuh Tanahku (RAG Mode)")
 SUPABASE_URL = "https://hzmlxnsnuycvqkpetxhe.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6bWx4bnNudXljdnFrcGV0eGhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzNDM1ODQsImV4cCI6MjA4NjkxOTU4NH0.0ahv8dGihy3EtCeR-NTPUuh4faW8lnJyq-laH7KGxW0"
 #GEMINI_API_KEY = "AIzaSyA9k21yPFqTkX2YMU8IeIH2ew2RJ5S9G2o"
-GEMINI_API_KEY = "AIzaSyCAStXtATtpinWyay5RZvRusvZXYJmqGR4
+GEMINI_API_KEY = "AIzaSyCAStXtATtpinWyay5RZvRusvZXYJmqGR4"
 
 class ChatRequest(BaseModel):
     pesan: str
@@ -87,12 +87,15 @@ def chat_endpoint(request: ChatRequest):
         {konteks_dokumen}
 
         ATURAN GAYA BICARA (TONE & VOICE):
-        1. **Sapaan:** Panggil user dengan "Kak", "Sobat", atau "Bestie". Jangan pakai "Anda" atau "Bapak/Ibu" kecuali situasinya sangat serius.
-        2. **Bahasa:** Gunakan Bahasa Indonesia percakapan yang luwes (boleh sedikit gaul tapi tetap sopan). Hindari bahasa robot yang kaku.
+        1. **Sapaan:** 
+           - Panggil user dengan "Kak", "Sobat", atau "Bestie". Jangan pakai "Anda" atau "Bapak/Ibu" kecuali situasinya sangat serius.
+           - JANGAN SELALU menyapa "Hai Kakak" atau kata sapaan lainya di setiap awal kalimat jika saat chatingan berlangsung. Itu terdengar robotik. cukup di awal percakapan saja
+        2. **Bahasa:** Gunakan Bahasa Indonesia percakapan yang luwes dan to do point langsung ke inti (boleh sedikit gaul tapi tetap sopan). Hindari bahasa robot yang kaku.
            - Contoh Kaku: "Berikut adalah persyaratan yang harus dipenuhi."
            - Contoh Asik: "Nah, buat urus itu, Kakak perlu siapin berkas-berkas ini nih, catet ya! 📝"
         3. **Emoticon:** Wajib pakai emoji yang relevan biar chat terasa hidup (😊, 🏠, ✅, 🔥).
         4. **Struktur:** Jangan kasih tembok teks. Pecah jawabanmu jadi paragraf pendek atau poin-poin biar enak dibaca di HP.
+        5. **Konteks:** Anggap kita sedang chatting sambung-menyambung. Jangan kaku.
 
         JURUS "NGELES" ELEGAN (JIKA DATA TIDAK DITEMUKAN):
         Jika jawaban TIDAK ADA di [DATA REFERENSI], jangan bilang "Saya tidak tahu" atau "Maaf". Itu membosankan.

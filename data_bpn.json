@@ -1,0 +1,802 @@
+[
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "Informasi Umum",
+      "referensi_hukum": "UU No. 5 Tahun 1960 (UUPA) Pasal 20 & 35",
+      "tags": ["shm", "hgb", "perbedaan", "hak milik", "hak guna bangunan"]
+    },
+    "content_to_embed": "Pertanyaan masyarakat mengenai perbedaan utama antara Sertifikat Hak Milik (SHM) dan Hak Guna Bangunan (HGB).",
+    "content": "PERBEDAAN SHM DAN HGB\n\nSHM adalah hak terkuat dan terpenuh yang berlaku selamanya dan dapat diwariskan tanpa batas waktu. Sedangkan HGB adalah hak untuk mendirikan bangunan di atas tanah yang bukan miliknya (biasanya tanah Negara atau Hak Pengelolaan) dengan jangka waktu terbatas (biasanya 30 tahun) dan harus diperpanjang."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pajak Pertanahan",
+      "jenis_dokumen": "Ketentuan Pajak",
+      "referensi_hukum": "PP No. 34 Tahun 2016",
+      "tags": ["pajak", "penjual", "pph final", "jual beli"]
+    },
+    "content_to_embed": "Informasi tentang kewajiban pajak PPh Final yang harus dibayar oleh penjual saat melakukan transaksi penjualan tanah.",
+    "content": "PAJAK PENJUAL (PPH FINAL)\n\nPenjual wajib membayar Pajak Penghasilan (PPh) Final sebesar 2,5% dari nilai bruto pengalihan hak (nilai transaksi sebenarnya atau NJOP, mana yang lebih tinggi). Pembayaran dilakukan sebelum penandatanganan Akta Jual Beli."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pajak Pertanahan",
+      "jenis_dokumen": "Ketentuan Pajak",
+      "referensi_hukum": "UU No. 1 Tahun 2022 tentang HKPD",
+      "tags": ["pajak", "pembeli", "bphtb", "jual beli"]
+    },
+    "content_to_embed": "Informasi mengenai perhitungan pajak BPHTB yang wajib dibayarkan oleh pihak pembeli saat membeli rumah atau tanah.",
+    "content": "PAJAK PEMBELI (BPHTB)\n\nPembeli membayar Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB). Rumusnya: 5% x (Nilai Transaksi - NPOPTKP). Nilai Perolehan Objek Pajak Tidak Kena Pajak (NPOPTKP) ditetapkan berbeda tiap daerah (Kabupaten/Kota), rata-rata Rp 60 juta."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "PP No. 24 Tahun 1997 Pasal 37",
+      "tags": ["kuitansi", "bukti bayar", "ajb", "ppat", "jual beli bawah tangan"]
+    },
+    "content_to_embed": "Penjelasan mengenai kekuatan hukum kuitansi bermaterai sebagai bukti kepemilikan tanah dan kewajiban pembuatan AJB.",
+    "content": "KEKUATAN HUKUM KUITANSI\n\nTidak cukup. Kuitansi hanya bukti adanya transaksi pembayaran, bukan bukti peralihan hak. Agar sah secara hukum dan bisa balik nama sertifikat, jual beli wajib dilakukan dengan Akta Jual Beli (AJB) di hadapan Pejabat Pembuat Akta Tanah (PPAT)."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "PP No. 24 Tahun 1997 Pasal 57",
+      "tags": ["sertifikat hilang", "pengganti", "lapor polisi", "pengumuman"]
+    },
+    "content_to_embed": "Langkah-langkah dan syarat pengurusan pembuatan sertifikat tanah pengganti karena sertifikat asli hilang.",
+    "content": "PENGGANTIAN SERTIFIKAT HILANG\n\nPemilik harus mengajukan permohonan sertifikat pengganti ke Kantor Pertanahan. Tahapannya: 1) Surat Tanda Lapor Kehilangan dari Polres, 2) Blokir dan Sumpah di BPN, 3) Pengumuman di media massa selama 30 hari. Jika tidak ada sanggahan, sertifikat pengganti diterbitkan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "PP No. 18 Tahun 2021 & Permen ATR/BPN No. 18 Tahun 2021",
+      "tags": ["wna", "asing", "hak pakai", "apartemen", "kepemilikan"]
+    },
+    "content_to_embed": "Aturan dan batasan hukum mengenai hak kepemilikan properti dan tanah oleh Warga Negara Asing (WNA) di Indonesia.",
+    "content": "KEPEMILIKAN PROPERTI WNA\n\nWNA yang memiliki izin tinggal (KITAS/KITAP) boleh memiliki properti, namun terbatas pada Hak Pakai atau Hak Milik atas Satuan Rumah Susun (Apartemen) di atas tanah Hak Pakai, dengan batasan harga minimal tertentu sesuai daerah. WNA dilarang memiliki SHM."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Perkaban No. 1 Tahun 2010",
+      "tags": ["waktu proses", "balik nama", "ajb", "estimasi", "sop"]
+    },
+    "content_to_embed": "Estimasi waktu atau durasi proses pendaftaran balik nama sertifikat di kantor BPN setelah penandatanganan AJB.",
+    "content": "DURASI BALIK NAMA\n\nSesuai Standar Operasional Prosedur (SOP) BPN, proses balik nama jual beli memakan waktu 5 hari kerja setelah berkas dinyatakan lengkap dan biaya PNBP dibayar. Namun, praktiknya bisa bervariasi tergantung antrean di kantor pertanahan setempat."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah",
+      "jenis_dokumen": "Informasi Umum",
+      "referensi_hukum": "SKB 3 Menteri tentang PTSL",
+      "tags": ["ptsl", "sertifikat massal", "gratis", "biaya pra sertifikasi"]
+    },
+    "content_to_embed": "Penjelasan mengenai program Pendaftaran Tanah Sistematis Lengkap (PTSL) beserta rincian biaya yang ditanggung negara dan masyarakat.",
+    "content": "BIAYA PTSL\n\nPTSL (Pendaftaran Tanah Sistematis Lengkap) adalah program sertifikasi massal. Biaya penyuluhan, pengukuran, dan penerbitan SK di BPN adalah GRATIS (ditanggung negara). Namun, biaya pra-sertifikasi (patok, materai, fotokopi, surat desa) ditanggung pemohon dengan batas maksimal Rp 150.000 (untuk Jawa-Bali)."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Kepmen Agraria/KBPN No. 6 Tahun 1998",
+      "tags": ["peningkatan hak", "hgb ke shm", "pnbp", "rumah tinggal"]
+    },
+    "content_to_embed": "Tata cara dan persyaratan mengubah status sertifikat Hak Guna Bangunan (HGB) menjadi Sertifikat Hak Milik (SHM) untuk rumah tinggal.",
+    "content": "PENINGKATAN HAK HGB KE SHM\n\nUntuk rumah tinggal dengan luas < 600 m2, pemohon cukup datang ke loket BPN mengisi formulir, membawa sertifikat asli, IMB/PBG, SPPT PBB, KTP, dan KK. Biaya PNBP hanya Rp 50.000 per sertifikat."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "PP No. 24 Tahun 1997 Pasal 42",
+      "tags": ["warisan", "turun waris", "jual beli", "ahli waris"]
+    },
+    "content_to_embed": "Penjelasan mengenai kewajiban melakukan proses turun waris terlebih dahulu sebelum tanah warisan dapat dijual kepada pihak lain.",
+    "content": "JUAL BELI TANAH WARIS\n\nYa, wajib. Tanah yang pemiliknya meninggal dunia harus melalui proses 'Turun Waris' terlebih dahulu ke nama seluruh ahli waris. Setelah sertifikat tercatat atas nama para ahli waris, baru kemudian dibuatkan Akta Jual Beli (AJB) ke pembeli."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Tarif",
+      "referensi_hukum": "PP No. 128 Tahun 2015",
+      "tags": ["biaya balik nama", "pnbp", "znt", "tarif resmi"]
+    },
+    "content_to_embed": "Rumus dan cara menghitung biaya resmi Penerimaan Negara Bukan Pajak (PNBP) di BPN untuk layanan Balik Nama sertifikat.",
+    "content": "BIAYA PNBP BALIK NAMA\n\nBiaya resmi yang disetor ke negara dihitung dengan rumus: (Nilai Tanah / 1.000) + Rp 50.000. Nilai Tanah didasarkan pada Nilai ZNT (Zona Nilai Tanah) yang dikeluarkan Kementerian ATR/BPN."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Hak Tanggungan",
+      "jenis_dokumen": "Informasi Umum",
+      "referensi_hukum": "UU No. 4 Tahun 1996",
+      "tags": ["hak tanggungan", "agunan", "bank", "jaminan", "kredit"]
+    },
+    "content_to_embed": "Definisi Hak Tanggungan dan implikasi hukumnya ketika sertifikat tanah dijadikan agunan atau jaminan utang di Bank.",
+    "content": "DEFINISI HAK TANGGUNGAN\n\nHak Tanggungan adalah hak jaminan yang dibebankan pada hak atas tanah sebagai pelunasan utang. Ini terjadi ketika sertifikat tanah 'disekolahkan' atau dijadikan agunan di Bank. Jika debitur wanprestasi, bank punya hak mendahului untuk melelang tanah tersebut."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah",
+      "jenis_dokumen": "Informasi Umum",
+      "referensi_hukum": "PP No. 24 Tahun 1997",
+      "tags": ["girik", "letter c", "risiko", "belum sertifikat"]
+    },
+    "content_to_embed": "Penjelasan mengenai risiko hukum membeli atau menguasai tanah yang masih berstatus Girik atau Letter C (belum bersertifikat).",
+    "content": "RISIKO TANAH GIRIK\n\nTanah Girik belum terdaftar di BPN, sehingga kepastian hukumnya lemah dibanding sertifikat. Risikonya meliputi: batas tanah tidak akurat, potensi sengketa ganda, atau ternyata tanah tersebut adalah aset negara. Wajib melakukan pengecekan riwayat tanah di Kelurahan secara teliti."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "PP No. 18 Tahun 2021",
+      "tags": ["hgb habis", "kadaluarsa", "perpanjangan", "tanah negara"]
+    },
+    "content_to_embed": "Status hukum tanah jika jangka waktu Hak Guna Bangunan (HGB) telah habis dan belum diperpanjang oleh pemiliknya.",
+    "content": "HGB KADALUARSA\n\nSecara hukum, HGB yang habis jangka waktunya akan menjadi Tanah Negara. Namun, bekas pemegang hak masih diberikan prioritas untuk mengajukan permohonan hak baru/perpanjangan, asalkan tanah tersebut masih dikuasai dan dimanfaatkan dengan baik."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pajak Pertanahan",
+      "jenis_dokumen": "Ketentuan Pajak",
+      "referensi_hukum": "PP No. 34 Tahun 2016 & Perdirjen Pajak No. PER-30/PJ/2009",
+      "tags": ["hibah", "pajak hibah", "keluarga", "bebas pph", "bphtb"]
+    },
+    "content_to_embed": "Aturan pengenaan pajak (PPh dan BPHTB) untuk peralihan hak tanah melalui mekanisme hibah antara orang tua kepada anak kandung.",
+    "content": "PAJAK HIBAH KELUARGA\n\nUntuk PPh (Pajak Penjual/Pemberi), hibah ke keluarga sedarah dalam satu garis keturunan lurus (ortu ke anak) dikecualikan dari pajak (Nol Rupiah). Namun, penerima hibah (anak) tetap wajib membayar BPHTB Hibah, biasanya dengan tarif diskon (seringkali 50% dari tarif normal, tergantung Perda)."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Sengketa",
+      "jenis_dokumen": "Informasi Umum",
+      "referensi_hukum": "Permen ATR/BPN No. 21 Tahun 2020",
+      "tags": ["sengketa batas", "patok geser", "mediasi", "pengadilan"]
+    },
+    "content_to_embed": "Langkah hukum dan mediasi yang bisa dilakukan jika terjadi sengketa batas tanah akibat tindakan tetangga yang menggeser patok.",
+    "content": "SENGKETA BATAS TANAH\n\nLangkah pertama adalah musyawarah. Jika buntu, minta mediasi ke Kepala Desa/Lurah. Jika tetap tidak selesai, ajukan pengaduan ke Kantor Pertanahan untuk mediasi. Jika masih gagal, langkah terakhir adalah gugatan perdata ke Pengadilan Negeri. Menggeser patok secara sepihak juga bisa menjadi tindak pidana."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Yurisprudensi Mahkamah Agung RI",
+      "tags": ["jual beli", "bawah tangan", "tanpa notaris", "batal hukum"]
+    },
+    "content_to_embed": "Penjelasan mengenai keabsahan dan risiko pembatalan atas perjanjian jual beli tanah yang hanya dilakukan di bawah tangan tanpa notaris/PPAT.",
+    "content": "JUAL BELI BAWAH TANGAN\n\nBisa dibatalkan. Jual beli tanah harus memenuhi syarat terang dan tunai. Meskipun perjanjian bawah tangan diakui sebagai perikatan, namun karena tidak dilakukan di hadapan PPAT, peralihan haknya belum sah secara hukum agraria, sehingga rawan sengketa dan pembatalan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "Informasi Umum",
+      "referensi_hukum": "Permen ATR/BPN No. 1 Tahun 2021",
+      "tags": ["sertifikat elektronik", "digital", "dokumen elektronik", "qr code"]
+    },
+    "content_to_embed": "Definisi dan konsep Sertifikat Elektronik sebagai pengganti buku tanah fisik yang diterbitkan oleh Kementerian ATR/BPN.",
+    "content": "SERTIFIKAT TANAH ELEKTRONIK\n\nSertifikat Elektronik adalah dokumen pertanahan yang diterbitkan melalui sistem elektronik. Pemilik tidak lagi memegang buku hijau fisik, melainkan data digital yang aman. Bukti kepemilikan dapat dicetak berupa satu lembar dokumen dengan QR Code yang tervalidasi."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "UU No. 5 Tahun 1960 (UUPA) Pasal 20",
+      "tags": ["masa berlaku", "shm", "hak milik", "kadaluarsa"]
+    },
+    "content_to_embed": "Informasi mengenai jangka waktu dan masa berlaku Sertifikat Hak Milik (SHM).",
+    "content": "MASA BERLAKU SHM\n\nSertifikat Hak Milik berlaku selamanya dan tidak memiliki masa kadaluarsa, selama tanah tersebut tidak musnah, tidak jatuh ke negara, dan pemiliknya tetap memenuhi syarat sebagai subjek hak milik (WNI)."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Permen PUPR No. 11/PRT/M/2019",
+      "tags": ["ppjb", "ajb", "belum lunas", "pengikatan jual beli"]
+    },
+    "content_to_embed": "Perbedaan antara Perjanjian Pengikatan Jual Beli (PPJB) untuk transaksi yang belum lunas dengan Akta Jual Beli (AJB).",
+    "content": "PPJB VS AJB\n\nSeringkali masyarakat salah sebut. Jika transaksi belum lunas, dokumen yang dibuat adalah PPJB (Perjanjian Pengikatan Jual Beli) di hadapan Notaris. AJB (Akta Jual Beli) di hadapan PPAT hanya boleh ditandatangani jika pembayaran harga tanah sudah lunas sepenuhnya."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Pasal 97 Permen ATR/BPN No. 3 Tahun 1997",
+      "tags": ["pengecekan", "checking", "jual beli", "ppat", "sertifikat asli"]
+    },
+    "content_to_embed": "Kewajiban dan prosedur melakukan pengecekan sertifikat (checking) di BPN sebelum transaksi jual beli tanah untuk memastikan keaslian dan status hukum tanah.",
+    "content": "PENGECEKAN SERTIFIKAT\n\nSangat wajib. Pengecekan sertifikat (Checking) dilakukan di Kantor Pertanahan oleh PPAT sebelum pembuatan akta. Tujuannya untuk memastikan kesesuaian data fisik dan yuridis, serta memastikan sertifikat tersebut asli, tidak sedang diblokir, tidak dalam sengketa, dan tidak sedang dijaminkan ke pihak lain."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Sengketa dan Perkara",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Permen ATR/BPN No. 13 Tahun 2017",
+      "tags": ["blokir", "sengketa", "cegah jual beli", "perlindungan hukum"]
+    },
+    "content_to_embed": "Langkah-langkah dan syarat mengajukan pemblokiran sertifikat tanah di BPN untuk mencegah penjualan atau transaksi sepihak.",
+    "content": "BLOKIR SERTIFIKAT\n\nPihak yang berkepentingan (misal: ahli waris yang bersengketa atau korban penipuan) dapat mengajukan permohonan pencatatan blokir ke BPN. Syaratnya membawa bukti identitas, bukti hubungan hukum dengan tanah tersebut, dan alasan blokir. Blokir berlaku 30 hari dan bisa diperpanjang jika ada perintah pengadilan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "UU No. 20 Tahun 2011 tentang Rumah Susun",
+      "tags": ["apartemen", "shmsrs", "strata title", "rumah susun"]
+    },
+    "content_to_embed": "Penjelasan mengenai perbedaan antara Sertifikat Hak Milik (SHM) rumah tapak dengan Hak Milik atas Satuan Rumah Susun (Apartemen).",
+    "content": "STATUS KEPEMILIKAN APARTEMEN\n\nBerbeda. SHMSRS (Sertifikat Hak Milik atas Satuan Rumah Susun) memberikan hak kepemilikan atas unit (ruang) secara individu, ditambah hak bersama atas tanah bersama, benda bersama, dan bagian bersama. Status tanah berdirinya apartemen biasanya adalah HGB, bukan SHM murni."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Pasal 21 UU No. 5 Tahun 1960 (UUPA)",
+      "tags": ["pt", "badan hukum", "shm", "hgb", "hak pakai"]
+    },
+    "content_to_embed": "Aturan hukum terkait larangan kepemilikan tanah berstatus Sertifikat Hak Milik (SHM) oleh perusahaan atau badan hukum.",
+    "content": "KEPEMILIKAN TANAH OLEH BADAN HUKUM\n\nTidak boleh. Badan Hukum (PT, Yayasan, Koperasi) dilarang memiliki SHM. Jika sebuah PT membeli tanah SHM, haknya wajib diturunkan menjadi Hak Guna Bangunan (HGB) atau Hak Pakai. Jika dipaksakan tetap SHM, maka hak tanah tersebut hapus demi hukum dan tanah menjadi milik negara."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pengukuran dan Pemetaan",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Pasal 16 PP No. 24 Tahun 1997",
+      "tags": ["luas beda", "pengukuran ulang", "pengembalian batas", "fisik lapangan"]
+    },
+    "content_to_embed": "Prosedur yang harus dilakukan apabila terdapat perbedaan ukuran luas tanah di sertifikat dengan kondisi fisik sebenarnya di lapangan.",
+    "content": "SELISIH LUAS TANAH\n\nPemilik tanah dapat mengajukan permohonan 'Pengembalian Batas' atau 'Pengukuran Ulang' ke BPN. Petugas ukur akan mengecek kembali batas-batas fisik. Jika memang terjadi perubahan alam atau kesalahan ukur lama, dapat dilakukan perbaikan data fisik pada sertifikat melalui prosedur adminitrasi di BPN."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Tarif",
+      "referensi_hukum": "Pasal 32 Peraturan Menteri ATR/BPN No. 33 Tahun 2021",
+      "tags": ["biaya ppat", "honor ppat", "jasa notaris", "persentase"]
+    },
+    "content_to_embed": "Informasi mengenai batas maksimal biaya jasa atau honorarium Pejabat Pembuat Akta Tanah (PPAT) dalam pembuatan akta transaksi.",
+    "content": "BIAYA HONORARIUM PPAT\n\nUang jasa (honorarium) PPAT termasuk uang saksi untuk pembuatan akta tidak boleh melebihi 1% (satu persen) dari harga transaksi yang tercantum di dalam akta. Namun, untuk masyarakat tidak mampu, PPAT wajib memberikan jasa secara cuma-cuma."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "PP No. 224 Tahun 1961 & PP No. 41 Tahun 1964",
+      "tags": ["absente", "tanah pertanian", "guntai", "luar kecamatan"]
+    },
+    "content_to_embed": "Aturan hukum mengenai larangan kepemilikan tanah pertanian oleh warga yang berdomisili di luar kecamatan tempat tanah berada (Absente).",
+    "content": "LARANGAN TANAH ABSENTE\n\nPemilik tanah pertanian wajib bertempat tinggal di kecamatan tempat tanah itu berada (atau berbatasan langsung). Kepemilikan tanah pertanian secara 'Guntai' (Absente) dilarang untuk mencegah penguasaan tanah tanpa digarap, kecuali bagi PNS/TNI/Pensiunan dengan batasan luas tertentu."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "KUHPerdata Buku III tentang Perikatan",
+      "tags": ["over kredit", "take over", "kpr", "novasi", "ppjb"]
+    },
+    "content_to_embed": "Prosedur hukum yang aman untuk melakukan transaksi pembelian rumah dengan metode oper kredit (take over).",
+    "content": "PROSEDUR OVER KREDIT\n\nJangan hanya menggunakan kuitansi atau Surat Kuasa jual bawah tangan. Cara yang sah adalah melalui 'Novasi' resmi di Bank (debitur diganti). Atau jika Bank menolak, lakukan Akta Pengikatan Jual Beli (PPJB) lunas + Surat Kuasa Mengambil Sertifikat + Kuasa Menjual di hadapan Notaris agar hak pembeli terlindungi."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "Informasi Umum",
+      "referensi_hukum": "UU Jabatan Notaris & PP No. 37 Tahun 1998",
+      "tags": ["notaris", "ppat", "pejabat", "akta tanah", "perbedaan"]
+    },
+    "content_to_embed": "Penjelasan mengenai perbedaan kewenangan antara profesi Notaris dan Pejabat Pembuat Akta Tanah (PPAT).",
+    "content": "PERBEDAAN NOTARIS DAN PPAT\n\nNotaris berwenang membuat akta otentik umum (seperti pendirian PT, Waris, Perjanjian), diangkat oleh Kemenkumham. PPAT khusus berwenang membuat akta peralihan hak atas tanah (Jual Beli, Hibah, APHT), diangkat oleh Kementerian ATR/BPN. Seseorang bisa merangkap jabatan keduanya."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "UU No. 41 Tahun 2004 tentang Wakaf",
+      "tags": ["wakaf", "tanah wakaf", "jual beli", "ahli waris"]
+    },
+    "content_to_embed": "Status hukum tanah wakaf, termasuk larangan memperjualbelikan atau mewariskan tanah yang sudah diwakafkan.",
+    "content": "STATUS TANAH WAKAF\n\nTidak bisa. Harta benda yang sudah diwakafkan dilarang dijadikan jaminan, disita, dihibahkan, dijual, diwariskan, ditukar, atau dialihkan dalam bentuk pengalihan hak lainnya. Statusnya menjadi milik umat/Allah untuk kepentingan umum/ibadah."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Hak Tanggungan",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Pasal 22 UU No. 4 Tahun 1996",
+      "tags": ["roya", "lunas", "penghapusan hak tanggungan", "kredit", "bank"]
+    },
+    "content_to_embed": "Cara mengurus dan menghapus Hak Tanggungan (Roya) pada sertifikat tanah setelah kredit atau utang di bank dinyatakan lunas.",
+    "content": "PENGHAPUSAN HAK TANGGUNGAN (ROYA)\n\nSetelah kredit lunas, Bank akan memberikan surat lunas dan sertifikat HT. Debitur wajib membawanya ke BPN (kini bisa online/elektronik) untuk proses Roya. Proses ini akan menghapus catatan beban utang di buku tanah sertifikat, sehingga sertifikat kembali bersih."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Penataan Ruang",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "PP No. 21 Tahun 2021",
+      "tags": ["kkpr", "izin lokasi", "tata ruang", "zonasi", "izin bangun"]
+    },
+    "content_to_embed": "Pengertian dan fungsi dokumen Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR) yang dulunya dikenal sebagai Izin Lokasi.",
+    "content": "IZIN KKPR\n\nKKPR adalah dokumen yang menyatakan kesesuaian antara rencana kegiatan pemanfaatan ruang dengan Rencana Tata Ruang (RTR). Sebelum mengurus perizinan berusaha atau mendirikan bangunan (PBG) di atas tanah, pemilik wajib memastikan tanah tersebut sesuai zonanya melalui KKPR."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "PP No. 37 Tahun 1998 tentang Peraturan Jabatan PPAT",
+      "tags": ["salinan ajb", "akta hilang", "grosse akta", "arsip ppat"]
+    },
+    "content_to_embed": "Prosedur dan hak para pihak untuk meminta Salinan Akta Jual Beli (AJB) dari PPAT apabila dokumen asli milik mereka hilang.",
+    "content": "SALINAN AKTA PPAT\n\nBisa. Pihak yang berkepentingan (penjual/pembeli) dapat meminta Salinan Akta (Grosse Akta) kepada PPAT yang membuat akta tersebut. PPAT wajib menyimpan Minuta Akta (dokumen asli) sebagai arsip negara yang tidak boleh dikeluarkan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Permen PUPR No. 28/PRT/M/2015",
+      "tags": ["sempadan sungai", "bantaran", "tanah negara", "larangan sertifikat"]
+    },
+    "content_to_embed": "Aturan larangan menerbitkan sertifikat hak milik atau mendirikan bangunan permanen di atas tanah sempadan atau bantaran sungai.",
+    "content": "TANAH SEMPADAN SUNGAI\n\nTanah yang masuk dalam garis sempadan sungai (zona pelindung sungai) adalah tanah negara yang dilarang dimiliki dengan Hak Milik (SHM) dan dilarang mendirikan bangunan permanen di atasnya. Sertifikat tidak akan diterbitkan jika hasil ukur BPN menunjukkan lokasi berada di zona terlarang."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pengendalian Pertanahan",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "PP No. 20 Tahun 2021",
+      "tags": ["tanah terlantar", "cabut hak", "sanksi", "bank tanah", "penertiban"]
+    },
+    "content_to_embed": "Sanksi hukum dan konsekuensi pencabutan hak atas tanah bersertifikat yang sengaja ditelantarkan oleh pemiliknya.",
+    "content": "SANKSI TANAH TERLANTAR\n\nPemerintah dapat menetapkan tanah tersebut sebagai Tanah Terlantar. Setelah melalui peringatan (1, 2, dan 3), hak atas tanah dapat dihapuskan, diputuskan hubungan hukumnya, dan tanah kembali dikuasai Negara atau diberikan kepada pihak lain yang membutuhkan (Bank Tanah)."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Pasal 48 PP No. 24 Tahun 1997",
+      "tags": ["pecah sertifikat", "kavling", "site plan", "pemecahan"]
+    },
+    "content_to_embed": "Syarat dan langkah-langkah untuk memecah satu sertifikat induk menjadi beberapa sertifikat kavling yang lebih kecil.",
+    "content": "PEMECAHAN SERTIFIKAT\n\nPemilik mengajukan permohonan pemecahan ke BPN dengan melampirkan Site Plan yang disetujui dinas tata kota. BPN akan melakukan pengukuran dan menerbitkan Surat Ukur baru untuk tiap kavling. Sertifikat induk akan ditarik/dimatikan dan diganti dengan sertifikat-sertifikat pecahan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Sengketa dan Perkara",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Pasal 6 UUPA & Pasal 667 KUHPerdata",
+      "tags": ["hak jalan", "akses tertutup", "tanah terkurung", "servitut"]
+    },
+    "content_to_embed": "Aturan hukum mengenai hak akses jalan (servitut) dan larangan membangun tembok yang menutup tanah tetangga hingga terkurung.",
+    "content": "HAK JALAN (SERVITUT)\n\nTidak boleh, terutama jika jalan tersebut adalah satu-satunya akses (tanah terkurung). Pemilik tanah yang terkurung berhak menuntut jalan keluar ke jalan umum dari tetangganya dengan ganti rugi yang layak. Tanah memiliki fungsi sosial yang tidak boleh merugikan kepentingan umum."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "Informasi Umum",
+      "referensi_hukum": "Permen ATR/BPN No. 3 Tahun 1997",
+      "tags": ["warkah", "arsip bpn", "riwayat tanah", "dokumen pendaftaran"]
+    },
+    "content_to_embed": "Definisi 'Warkah Tanah' dan peranannya sebagai dokumen riwayat dasar penerbitan sertifikat tanah di BPN.",
+    "content": "DEFINISI WARKAH\n\nWarkah adalah kumpulan dokumen riwayat yang menjadi dasar penerbitan sertifikat tanah. Isinya meliputi surat permohonan, bukti alas hak (girik/AJB lama), identitas pemohon, dan data pengukuran. Warkah disimpan di arsip BPN dan bersifat rahasia, hanya bisa dibuka atas perintah pengadilan atau penyidikan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Pasal 36 UU No. 1 Tahun 1974 tentang Perkawinan",
+      "tags": ["persetujuan istri", "suami istri", "harta gono gini", "jual beli"]
+    },
+    "content_to_embed": "Kewajiban menyertakan persetujuan pasangan (suami/istri) dalam transaksi jual beli tanah yang berstatus harta bersama (gono-gini).",
+    "content": "PERSETUJUAN PASANGAN\n\nWajib, jika tanah tersebut diperoleh selama perkawinan (Harta Gono-Gini), meskipun sertifikatnya hanya atas nama suami atau istri saja. Tanpa persetujuan pasangan, jual beli cacat hukum dan bisa dibatalkan. Kecuali ada Perjanjian Pisah Harta yang dibuat di Notaris."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Pasal 832 KUHPerdata (Burgerlijk Wetboek)",
+      "tags": ["tanpa ahli waris", "tanah negara", "meninggal dunia", "warisan"]
+    },
+    "content_to_embed": "Status kepemilikan dan hukum pertanahan terhadap tanah yang pemiliknya meninggal dunia tanpa meninggalkan ahli waris sedikit pun.",
+    "content": "TANAH TANPA AHLI WARIS\n\nJika seseorang meninggal dunia tanpa meninggalkan ahli waris (baik sedarah maupun pasangan) dan tidak meninggalkan wasiat, maka harta bendanya (termasuk tanah) akan jatuh menjadi milik Negara."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah Pertama Kali",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Pasal 76 Permen ATR/BPN No. 3 Tahun 1997",
+      "tags": ["girik", "tanah adat", "sertifikat baru", "pendaftaran pertama"]
+    },
+    "content_to_embed": "Syarat administrasi dan dokumen yang dibutuhkan untuk membuat sertifikat tanah untuk pertama kali dari tanah status girik atau adat.",
+    "content": "SYARAT SERTIFIKAT TANAH GIRIK\n\nSyarat utama: 1) Surat permohonan, 2) Bukti kepemilikan tanah (Girik/Letter C/Petuk D) asli, 3) Surat keterangan riwayat tanah dari Desa/Kelurahan, 4) Surat keterangan tidak sengketa, 5) KTP & KK pemohon, 6) Bukti setor BPHTB/PPH (jika ada). Petugas ukur akan melakukan pengukuran setelah berkas lengkap."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Peraturan Kepala BPN No. 1 Tahun 2010",
+      "tags": ["balik nama", "jual beli", "ajb", "syarat pendaftaran"]
+    },
+    "content_to_embed": "Dokumen yang wajib dilampirkan untuk proses pendaftaran balik nama sertifikat tanah karena transaksi jual beli.",
+    "content": "SYARAT BALIK NAMA JUAL BELI\n\nSyarat: 1) Formulir permohonan yang sudah diisi dan ditandatangani, 2) Sertifikat asli, 3) Akta Jual Beli (AJB) dari PPAT, 4) Fotokopi KTP & KK penjual dan pembeli yang dilegalisir, 5) Bukti setor BPHTB (validasi pajak), 6) Bukti setor PPh Final."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Pasal 42 PP No. 24 Tahun 1997",
+      "tags": ["waris", "turun waris", "syarat warisan", "ahli waris"]
+    },
+    "content_to_embed": "Persyaratan dokumen untuk mendaftarkan peralihan hak sertifikat tanah karena pewarisan (turun waris) kepada ahli waris.",
+    "content": "SYARAT BALIK NAMA WARIS\n\nSyarat: 1) Sertifikat asli, 2) Surat Keterangan Waris (SKW) dari Desa/Kecamatan atau Notaris, 3) Akta Kematian pewaris, 4) KTP & KK seluruh ahli waris, 5) SPPT PBB tahun berjalan, 6) Bukti setor BPHTB Waris (Bea Perolehan Hak karena Waris)."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Pasal 48 PP No. 24 Tahun 1997",
+      "tags": ["pecah waris", "pemecahan", "aphb", "bagi waris"]
+    },
+    "content_to_embed": "Syarat dan ketentuan untuk memecah sertifikat tanah warisan agar dapat dibagikan masing-masing kepada ahli waris.",
+    "content": "SYARAT PEMECAHAN WARIS\n\nSyarat: 1) Sertifikat asli atas nama pewaris, 2) Surat Keterangan Waris, 3) Akta Pembagian Harta Bersama (APHB) jika para ahli waris sepakat membagi fisik, 4) Site plan pemecahan yang disetujui, 5) Identitas seluruh ahli waris."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Pasal 50 PP No. 24 Tahun 1997",
+      "tags": ["penggabungan", "gabung sertifikat", "batas tanah"]
+    },
+    "content_to_embed": "Persyaratan untuk menggabungkan dua atau lebih sertifikat tanah yang letaknya berdampingan menjadi satu sertifikat.",
+    "content": "SYARAT PENGGABUNGAN SERTIFIKAT\n\nSyarat: 1) Dua atau lebih sertifikat asli yang letaknya berbatasan dan atas nama pemilik yang sama, 2) SPPT PBB, 3) Identitas pemohon (KTP/KK), 4) Surat permohonan penggabungan. Hak atas tanah tersebut harus sejenis (misal sama-sama SHM) dan jangka waktu berakhirnya sama."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Perpanjangan Hak",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "PP No. 18 Tahun 2021",
+      "tags": ["perpanjangan hgb", "hgb", "hak guna bangunan", "syarat perpanjang"]
+    },
+    "content_to_embed": "Dokumen yang diperlukan untuk mengajukan perpanjangan jangka waktu Hak Guna Bangunan (HGB) yang akan atau sudah habis.",
+    "content": "SYARAT PERPANJANGAN HGB\n\nSyarat: 1) Sertifikat HGB asli, 2) Fotokopi KTP dan KK pemegang hak, 3) SPPT PBB tahun berjalan, 4) Surat permohonan perpanjangan jangka waktu, 5) Pernyataan tanah dikuasai fisik, 6) Bukti pembayaran uang pemasukan kepada negara."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Pasal 57 PP No. 24 Tahun 1997",
+      "tags": ["sertifikat rusak", "pengganti", "buku tanah", "rusak"]
+    },
+    "content_to_embed": "Syarat pengurusan penerbitan sertifikat pengganti di BPN karena sertifikat asli mengalami kerusakan secara fisik.",
+    "content": "SYARAT SERTIFIKAT RUSAK\n\nSyarat: 1) Formulir permohonan, 2) Sertifikat asli yang rusak (fisik harus ada meskipun hancur sebagian), 3) KTP dan KK pemilik tanah. Petugas akan memeriksa sisa fisik sertifikat dengan data di Buku Tanah."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Standar Operasional Prosedur (SOP) BPN",
+      "tags": ["ktp asli", "identitas", "pendaftaran loket", "syarat umum"]
+    },
+    "content_to_embed": "Ketentuan mengenai kewajiban membawa KTP asli saat mendaftarkan layanan pertanahan di loket BPN.",
+    "content": "IDENTITAS KTP PENDAFTARAN\n\nUntuk pendaftaran di loket BPN, pemohon wajib menunjukkan KTP Asli untuk verifikasi identitas, namun yang dilampirkan dalam berkas warkah adalah fotokopi KTP yang telah dicocokkan dengan aslinya oleh petugas atau dilegalisir oleh pejabat berwenang."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Hak Tanggungan",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Pasal 13 UU No. 4 Tahun 1996",
+      "tags": ["hak tanggungan", "apht", "hipotek", "bank", "kredit"]
+    },
+    "content_to_embed": "Syarat administrasi dan dokumen untuk mendaftarkan pembebanan Hak Tanggungan (Hipotek) di kantor BPN.",
+    "content": "SYARAT PENDAFTARAN HAK TANGGUNGAN\n\nSyarat: 1) Sertifikat asli (SHM/HGB), 2) Akta Pemberian Hak Tanggungan (APHT) dari PPAT, 3) Salinan perjanjian kredit, 4) Identitas kreditur (Bank) dan debitur, 5) Surat Kuasa Membebankan Hak Tanggungan (SKMHT) jika pemberian HT dikuasakan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Pasal 36 PP No. 24 Tahun 1997",
+      "tags": ["ganti nama", "perubahan nama", "penetapan pengadilan", "revisi nama"]
+    },
+    "content_to_embed": "Dokumen yang diperlukan untuk memproses perubahan nama pemilik pada sertifikat akibat ganti nama secara hukum.",
+    "content": "SYARAT GANTI NAMA SERTIFIKAT\n\nJika pemilik mengganti nama (misal ada penetapan pengadilan), syaratnya: 1) Sertifikat asli, 2) Salinan Penetapan Pengadilan Negeri tentang ganti nama, 3) KTP & KK dengan nama baru, 4) Formulir permohonan perubahan data."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "PP No. 42 Tahun 2006 tentang Pelaksanaan UU Wakaf",
+      "tags": ["wakaf", "aiw", "nazhir", "sertifikat wakaf"]
+    },
+    "content_to_embed": "Persyaratan dokumen untuk pensertifikatan tanah yang telah diwakafkan untuk kepentingan umum atau ibadah.",
+    "content": "SYARAT SERTIFIKAT WAKAF\n\nSyarat: 1) Akta Ikrar Wakaf (AIW) dari KUA/PPAIW, 2) Sertifikat tanah milik wakif (jika sudah bersertifikat) atau bukti kepemilikan tanah adat, 3) Surat pengesahan nazhir (pengelola wakaf), 4) KTP Wakif dan Nazhir."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Pasal 41 PP No. 24 Tahun 1997",
+      "tags": ["lelang", "risalah lelang", "kpknl", "pemenang lelang"]
+    },
+    "content_to_embed": "Syarat pendaftaran dan peralihan hak atas tanah hasil lelang eksekusi melalui KPKNL.",
+    "content": "SYARAT SERTIFIKAT LELANG\n\nSyarat: 1) Kutipan Risalah Lelang dari KPKNL, 2) Bukti pelunasan harga lelang dan BPHTB, 3) Sertifikat asli (jika diserahkan saat lelang). Jika sertifikat tidak ada, pemenang lelang dapat mengajukan penerbitan sertifikat baru dengan surat keterangan dari Kepala Lelang."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemberian Hak",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Permen ATR/BPN No. 18 Tahun 2021",
+      "tags": ["sk hak", "tanah negara", "sporadik", "pemberian hak"]
+    },
+    "content_to_embed": "Syarat untuk mengajukan permohonan Surat Keputusan Hak (SK Hak) untuk status tanah yang dikuasai langsung oleh negara.",
+    "content": "SYARAT SK HAK TANAH NEGARA\n\nSyarat: 1) Riwayat penguasaan tanah, 2) Surat pernyataan penguasaan fisik secara itikad baik (SPORADIK), 3) Peta bidang tanah hasil ukur BPN, 4) Surat rekomendasi dari instansi terkait (jika diperlukan), 5) Bukti identitas pemohon."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Hak Tanggungan",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Permen ATR/BPN No. 5 Tahun 2020",
+      "tags": ["roya manual", "lunas", "sht", "hapus hak tanggungan"]
+    },
+    "content_to_embed": "Dokumen yang diperlukan untuk menghapus beban utang (roya) di BPN secara manual jika sistem elektronik mengalami kendala atau untuk kasus tertentu.",
+    "content": "SYARAT ROYA MANUAL\n\nSyarat: 1) Sertifikat asli yang terdapat catatan Hak Tanggungan, 2) Sertifikat Hak Tanggungan (SHT) asli, 3) Surat Roya/Surat Lunas dari Bank/Kreditur, 4) Identitas pemohon, 5) Formulir permohonan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "PP No. 18 Tahun 2021",
+      "tags": ["badan hukum", "pt", "yayasan", "akta pendirian"]
+    },
+    "content_to_embed": "Syarat tambahan pendaftaran hak atas tanah jika pemohonnya adalah sebuah badan hukum (seperti PT atau Yayasan).",
+    "content": "SYARAT PENDAFTARAN BADAN HUKUM\n\nSyarat tambahan untuk badan hukum: 1) Akta Pendirian Perusahaan dan Pengesahan Kemenkumham, 2) NPWP Perusahaan, 3) Identitas Direksi yang berwenang bertindak, 4) Izin lokasi/KKPR untuk peruntukan usaha."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pajak Pertanahan",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Pasal 91 UU No. 28 Tahun 2009 tentang PDRD",
+      "tags": ["lunas bphtb", "pajak", "tolak berkas", "syarat mutlak"]
+    },
+    "content_to_embed": "Penjelasan mengenai kewajiban pelunasan BPHTB sebelum berkas pendaftaran sertifikat bisa diproses oleh BPN.",
+    "content": "KEWAJIBAN LUNAS BPHTB\n\nYa, bukti pelunasan BPHTB (Bea Perolehan Hak atas Tanah dan Bangunan) adalah syarat mutlak yang harus dilampirkan saat mendaftarkan peralihan hak atau pemberian hak baru di BPN. Jika belum lunas, berkas akan ditolak."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "PP No. 24 Tahun 1997",
+      "tags": ["hibah", "peralihan hibah", "akta hibah", "syarat hibah"]
+    },
+    "content_to_embed": "Syarat dan dokumen untuk mendaftarkan peralihan hak sertifikat tanah karena hibah dari satu pihak ke pihak lain.",
+    "content": "SYARAT PERALIHAN HIBAH\n\nSyarat: 1) Akta Hibah dari PPAT, 2) Sertifikat Asli, 3) KTP Pemberi dan Penerima Hibah, 4) Bukti bayar BPHTB Hibah, 5) SPPT PBB, 6) Bukti hubungan kekerabatan (Kartu Keluarga/Akta Lahir) jika hibah keluarga untuk keringanan pajak."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Pasal 1792 KUHPerdata",
+      "tags": ["surat kuasa", "dikuasakan", "penerima kuasa", "akta notaris"]
+    },
+    "content_to_embed": "Ketentuan dokumen surat kuasa jika proses pendaftaran pertanahan tidak diurus sendiri oleh pemilik langsung.",
+    "content": "SYARAT SURAT KUASA\n\nJika pendaftaran tidak dilakukan sendiri oleh pemilik, wajib melampirkan Surat Kuasa tertulis yang bermaterai cukup. Penerima kuasa harus melampirkan fotokopi KTP-nya. Untuk beberapa layanan krusial, BPN mensyaratkan Surat Kuasa dalam bentuk Akta Notariil."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Pasal 31 PP No. 24 Tahun 1997",
+      "tags": ["kepemilikan bersama", "gabungan", "nama ganda", "porsi hak"]
+    },
+    "content_to_embed": "Syarat pendaftaran tanah dengan kepemilikan bersama atau lebih dari satu nama pada sertifikat.",
+    "content": "SYARAT KEPEMILIKAN BERSAMA\n\nSyaratnya sama dengan pendaftaran biasa, namun dalam formulir permohonan dan bukti perolehan (AJB/Hibah) harus dicantumkan dengan jelas nama-nama semua pemilik beserta besaran bagiannya jika ditentukan (misal: Tuan A 1/2 bagian, Tuan B 1/2 bagian)."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pendaftaran Tanah",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Permen ATR/BPN No. 6 Tahun 2018",
+      "tags": ["ptsl", "sertifikat massal", "syarat ptsl", "pendaftaran sistematis"]
+    },
+    "content_to_embed": "Syarat pengajuan dokumen untuk mengikuti program Pendaftaran Tanah Sistematis Lengkap (PTSL) di BPN.",
+    "content": "SYARAT PTSL\n\nSyarat PTSL lebih sederhana: 1) Dokumen kependudukan (KTP & KK), 2) Surat tanah (Girik/Letter C/Sppt PBB/Surat garapan), 3) Tanda batas tanah (patok) yang sudah terpasang, 4) Surat pernyataan penguasaan fisik, 5) Mengisi formulir isian data yuridis yang disediakan panitia desa."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Peraturan Kepala BPN No. 1 Tahun 2010",
+      "tags": ["dokumen utama", "balik nama", "jual beli", "syarat pendaftaran"]
+    },
+    "content_to_embed": "Daftar lengkap dokumen utama yang harus disiapkan untuk proses balik nama sertifikat tanah karena transaksi jual beli.",
+    "content": "SYARAT DOKUMEN BALIK NAMA\n\nDokumen wajib meliputi: 1) Sertifikat Asli, 2) Akta Jual Beli (AJB) dari PPAT, 3) Fotokopi KTP & KK Penjual dan Pembeli (dilegalisir), 4) Bukti Pelunasan PPh (Penjual) dan BPHTB (Pembeli) yang sudah divalidasi, 5) SPPT PBB tahun berjalan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Tarif",
+      "referensi_hukum": "PP No. 128 Tahun 2015",
+      "tags": ["rumus biaya", "pnbp", "znt", "biaya balik nama"]
+    },
+    "content_to_embed": "Cara perhitungan dan rumus biaya Penerimaan Negara Bukan Pajak (PNBP) di BPN untuk layanan balik nama.",
+    "content": "RUMUS BIAYA PNBP\n\nBiaya Penerimaan Negara Bukan Pajak (PNBP) untuk layanan peralihan hak dihitung dengan rumus: (Nilai Tanah / 1.000) + Rp 50.000. Nilai Tanah ini mengacu pada Nilai Pasar atau Zona Nilai Tanah (ZNT) yang ditetapkan Kementerian ATR/BPN, bukan semata-mata NJOP."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Peraturan Kepala BPN No. 1 Tahun 2010",
+      "tags": ["estimasi waktu", "durasi", "waktu penyelesaian", "balik nama"]
+    },
+    "content_to_embed": "Estimasi waktu dan standar operasional penyelesaian proses pendaftaran balik nama sertifikat di Kantor BPN.",
+    "content": "ESTIMASI WAKTU BALIK NAMA\n\nBerdasarkan Standar Operasional Prosedur (SOP) BPN, penyelesaian balik nama adalah 5 (lima) hari kerja sejak berkas dinyatakan lengkap dan pembayaran PNBP diterima. Namun, dalam praktiknya bisa memakan waktu 14-30 hari tergantung beban kerja kantor pertanahan setempat."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Surat Edaran Dirjen Pajak & Kebijakan BPN Setempat",
+      "tags": ["lunas pbb", "sppt", "tunggakan pajak", "syarat balik nama"]
+    },
+    "content_to_embed": "Ketentuan wajib lunas Pajak Bumi dan Bangunan (PBB) dan status tunggakan tahun sebelumnya untuk syarat proses pendaftaran di BPN.",
+    "content": "KEWAJIBAN LUNAS PBB\n\nSyarat mutlak biasanya hanya bukti lunas SPPT PBB tahun berjalan (tahun saat transaksi dilakukan). Namun, BPN seringkali meminta bukti pelunasan tunggakan tahun-tahun sebelumnya (jika ada) sebagai bentuk tertib administrasi pertanahan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "Ketentuan Tarif",
+      "referensi_hukum": "Lampiran PP No. 128 Tahun 2015",
+      "tags": ["biaya cek", "checking", "pnbp", "pengecekan sertifikat"]
+    },
+    "content_to_embed": "Besaran biaya resmi PNBP untuk layanan pengecekan sertifikat tanah sebelum proses peralihan hak dimulai.",
+    "content": "BIAYA CEK SERTIFIKAT\n\nSebelum transaksi, wajib dilakukan pengecekan bersih (checking) untuk memastikan tanah tidak sengketa. Biaya resmi PNBP untuk layanan Informasi Pertanahan (Pengecekan Sertifikat) adalah Rp 50.000 per sertifikat."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Pasal 37 PP No. 24 Tahun 1997",
+      "tags": ["tanpa ppat", "notaris", "akta", "jual beli"]
+    },
+    "content_to_embed": "Pertanyaan mengenai bisakah proses balik nama dilakukan langsung oleh masyarakat tanpa bantuan atau tanpa akta dari PPAT.",
+    "content": "BALIK NAMA TANPA PPAT\n\nUntuk transaksi jual beli, hibah, tukar menukar, WAJIB menggunakan jasa PPAT karena BPN hanya menerima akta otentik yang dibuat oleh PPAT. Pengecualian hanya untuk Waris dan Lelang yang bisa diurus sendiri tanpa Akta PPAT."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Pasal 111 Permen ATR/BPN No. 3 Tahun 1997",
+      "tags": ["balik nama waris", "skw", "keterangan hak mewaris", "syarat warisan"]
+    },
+    "content_to_embed": "Syarat khusus surat keterangan ahli waris yang disesuaikan dengan golongan kependudukan pemohon untuk proses turun waris.",
+    "content": "SYARAT BALIK NAMA WARIS\n\nSyarat khususnya adalah Surat Keterangan Waris (SKW). Untuk WNI Pribumi cukup SKW yang disaksikan Lurah & Camat. Untuk WNI keturunan Tionghoa/Timur Asing biasanya memerlukan Akta Keterangan Hak Mewaris dari Notaris. Dilengkapi juga dengan Akta Kematian dan bukti setor BPHTB Waris."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Tarif",
+      "referensi_hukum": "PP No. 128 Tahun 2015",
+      "tags": ["biaya waris", "pnbp warisan", "perhitungan biaya", "turun waris"]
+    },
+    "content_to_embed": "Cara menghitung besaran biaya PNBP untuk pendaftaran turun waris atau balik nama atas dasar pewarisan.",
+    "content": "BIAYA BALIK NAMA WARIS\n\nPerhitungannya sama dengan jual beli, yaitu (Nilai Tanah / 1.000) + Rp 50.000. Namun, dasar nilainya bukan nilai transaksi (karena waris bukan jual beli), melainkan Nilai Pasar Wajar tanah tersebut saat pewarisan terjadi."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pajak Pertanahan",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Peraturan Dirjen Pajak No. PER-18/PJ/2017",
+      "tags": ["validasi pajak", "bphtb", "pph", "verifikasi bapenda"]
+    },
+    "content_to_embed": "Definisi dan fungsi proses validasi pajak (BPHTB dan PPh) sebelum dokumen didaftarkan untuk balik nama di BPN.",
+    "content": "VALIDASI PAJAK\n\nValidasi adalah proses verifikasi bukti pembayaran pajak oleh instansi berwenang. BPHTB divalidasi oleh Badan Pendapatan Daerah (Bapenda), dan PPh divalidasi oleh Kantor Pelayanan Pajak (KPP). BPN tidak akan memproses balik nama jika bukti bayar pajak belum mendapat stempel validasi ini."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Pasal 37 PP No. 24 Tahun 1997",
+      "tags": ["kadaluarsa ajb", "masa berlaku", "akta jual beli", "pendaftaran tertunda"]
+    },
+    "content_to_embed": "Informasi mengenai ada tidaknya masa kedaluwarsa dokumen Akta Jual Beli (AJB) yang lama tidak diproses balik nama.",
+    "content": "KADALUARSA AJB\n\nSecara hukum pertanahan, Akta Jual Beli (AJB) tidak memiliki masa kadaluarsa. Namun, jika AJB 'disimpan' terlalu lama (bertahun-tahun) baru didaftarkan, akan timbul masalah validasi pajak ulang dan potensi denda administrasi pajak karena keterlambatan pelaporan, bukan penolakan dokumen AJB-nya."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Layanan Elektronik",
+      "jenis_dokumen": "Informasi Umum",
+      "referensi_hukum": "Permen ATR/BPN No. 5 Tahun 2020",
+      "tags": ["balik nama online", "elektronik", "mitra bpn", "pendaftaran online"]
+    },
+    "content_to_embed": "Informasi mengenai proses pengurusan balik nama sertifikat secara elektronik melalui sistem Mitra BPN.",
+    "content": "BALIK NAMA ONLINE\n\nSaat ini pendaftaran layanan peralihan hak (Balik Nama) sudah wajib dilakukan secara elektronik oleh PPAT melalui sistem Mitra BPN. Pemohon menyerahkan berkas fisik ke PPAT, lalu PPAT mengunggah data. Fisik sertifikat tetap diserahkan ke BPN untuk dicatat perubahannya."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Hukum Perdata (KUHPerdata)",
+      "tags": ["penjual meninggal", "proses bpn", "kematian setelah ajb", "status peralihan"]
+    },
+    "content_to_embed": "Penjelasan status hukum proses pendaftaran di BPN jika penjual meninggal dunia saat berkas sudah masuk atau AJB sudah ditandatangani.",
+    "content": "PENJUAL MENINGGAL SAAT PROSES\n\nJika AJB sudah ditandatangani dengan sah di hadapan PPAT sebelum penjual meninggal, maka proses Balik Nama tetap dapat dilanjutkan. Peralihan hak dianggap sudah terjadi saat penandatanganan AJB, sehingga kematian salah satu pihak setelahnya tidak membatalkan transaksi."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Ketentuan Tarif",
+      "referensi_hukum": "PP No. 128 Tahun 2015",
+      "tags": ["biaya balik hgb", "shm", "perbedaan biaya", "pnbp"]
+    },
+    "content_to_embed": "Perbedaan biaya balik nama sertifikat status Hak Guna Bangunan (HGB) dibandingkan Hak Milik (SHM).",
+    "content": "BIAYA BALIK NAMA HGB\n\nBiaya PNBP-nya sama saja dengan SHM, rumusnya (Nilai Tanah / 1.000) + Rp 50.000. Perbedaan hanya pada status haknya; Balik Nama HGB tidak mereset jangka waktu HGB. Sisa waktu HGB terus berjalan sesuai sertifikat awal."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "Peraturan Menteri Keuangan No. 132/PMK.02/2010",
+      "tags": ["znt", "zona nilai tanah", "njop", "dasar tarif"]
+    },
+    "content_to_embed": "Peran Zona Nilai Tanah (ZNT) yang ditetapkan BPN sebagai dasar pengenaan tarif biaya Penerimaan Negara Bukan Pajak (PNBP).",
+    "content": "PERAN ZNT\n\nZona Nilai Tanah (ZNT) adalah peta nilai tanah yang dikeluarkan BPN berdasarkan harga pasar wajar. BPN menggunakan nilai ZNT ini sebagai dasar perhitungan biaya PNBP Balik Nama, bukan menggunakan NJOP (PBB) yang seringkali lebih rendah dari harga pasar."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pajak Pertanahan",
+      "jenis_dokumen": "Ketentuan Hukum",
+      "referensi_hukum": "UU No. 28 Tahun 2009 tentang PDRD",
+      "tags": ["denda telat", "keterlambatan", "bphtb", "denda pajak"]
+    },
+    "content_to_embed": "Sanksi atau denda yang timbul jika proses balik nama atau penyetoran pajak terlambat dilakukan setelah penandatanganan Akta Jual Beli.",
+    "content": "DENDA KETERLAMBATAN BALIK NAMA\n\nDi BPN tidak ada denda keterlambatan pendaftaran AJB. Denda justru muncul dari sisi Pajak (BPHTB). Jika BPHTB dibayarkan lewat dari 1 bulan sejak tanggal AJB, pembeli akan kena denda bunga 2% per bulan dari pokok pajak."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "PP No. 24 Tahun 1997",
+      "tags": ["balik nama hibah", "syarat hibah", "bebas pph", "akta hibah"]
+    },
+    "content_to_embed": "Dokumen dan syarat khusus yang dibutuhkan untuk mendaftarkan balik nama karena perbuatan hukum hibah.",
+    "content": "SYARAT BALIK NAMA HIBAH\n\nSyaratnya mirip jual beli: 1) Akta Hibah dari PPAT, 2) Sertifikat Asli, 3) Identitas Pemberi dan Penerima Hibah, 4) Bukti Lunas PPh (jika bukan ke keluarga sedarah) dan BPHTB Hibah. Hibah ke keluarga inti bebas PPh tapi tetap bayar BPHTB (seringkali tarif diskon)."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Hak Tanggungan",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "UU Hak Tanggungan No. 4 Tahun 1996",
+      "tags": ["sertifikat diagunkan", "agunan bank", "pelunasan", "roya dan balik nama"]
+    },
+    "content_to_embed": "Prosedur peralihan hak atas tanah dan balik nama jika sertifikat asli masih diagunkan dan terikat Hak Tanggungan di bank.",
+    "content": "BALIK NAMA SERTIFIKAT AGUNAN\n\nTidak bisa langsung. Jika sertifikat sedang di Bank (Hak Tanggungan), utang harus dilunasi dulu (Roya). Setelah Roya tercatat dan sertifikat bersih, baru bisa dibuatkan AJB dan diproses Balik Nama. Bisa dilakukan simultan (Pelunasan - Roya - Balik Nama) dengan koordinasi Bank dan Notaris."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Peralihan Hak",
+      "jenis_dokumen": "Syarat",
+      "referensi_hukum": "Pasal 55 PP No. 24 Tahun 1997",
+      "tags": ["putusan pengadilan", "inkracht", "balik nama putusan", "eksekusi"]
+    },
+    "content_to_embed": "Syarat untuk melakukan balik nama pada sertifikat yang didasarkan pada eksekusi putusan pengadilan yang telah berkekuatan hukum tetap.",
+    "content": "BALIK NAMA PUTUSAN PENGADILAN\n\nSyaratnya: 1) Salinan Putusan Pengadilan yang sudah inkracht (berkekuatan hukum tetap), 2) Surat keterangan inkracht dari Panitera, 3) Sertifikat Asli (jika ada), 4) Bukti identitas pemohon. Tidak perlu AJB PPAT karena putusan hakim menggantikan fungsi akta peralihan."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Pemeliharaan Data",
+      "jenis_dokumen": "Ketentuan Tarif",
+      "referensi_hukum": "Lampiran PP No. 128 Tahun 2015",
+      "tags": ["ganti blanko", "buku penuh", "biaya tambahan", "sertifikat baru"]
+    },
+    "content_to_embed": "Informasi pengenaan biaya tambahan penerbitan sertifikat jika blanko isian nama sudah penuh saat dilakukan layanan balik nama.",
+    "content": "BIAYA GANTI BLANKO\n\nJika saat proses Balik Nama kolom isian di sertifikat sudah penuh atau kondisi fisik buku rusak, dikenakan biaya tambahan untuk 'Ganti Blanko' sertifikat sebesar Rp 50.000 per buku."
+  },
+  {
+    "metadata": {
+      "kategori_layanan": "Informasi Pertanahan",
+      "jenis_dokumen": "SOP",
+      "referensi_hukum": "Pasal 36 PP No. 24 Tahun 1997",
+      "tags": ["beda nama", "kesesuaian identitas", "surat keterangan desa", "nama ktp"]
+    },
+    "content_to_embed": "Tindakan yang harus dilakukan jika terdapat perbedaan nama di sertifikat asli dengan KTP yang digunakan saat mengajukan balik nama.",
+    "content": "KESESUAIAN NAMA KTP\n\nNama di sertifikat lama (penjual) harus sama persis dengan KTP. Jika ada perbedaan (misal: beda ejaan, gelar, atau singkatan), wajib melampirkan Surat Keterangan Beda Identitas dari Kelurahan/Desa yang menyatakan bahwa kedua nama tersebut adalah satu orang yang sama."
+  }
+]
