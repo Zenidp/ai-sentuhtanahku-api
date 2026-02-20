@@ -103,7 +103,7 @@ def chat_endpoint(request: ChatRequest):
 
         ATURAN GAYA BICARA:
         1. Sapaan: Panggil user "Kak". 
-        2. Perhatikan [RIWAYAT PERCAKAPAN SEBELUMNYA]. Jika user merujuk ke obrolan sebelumnya, jawablah dengan nyambung berdasarkan riwayat tersebut.
+        2. Perhatikan [RIWAYAT PERCAKAPAN SEBELUMNYA]. Jika user merujuk ke obrolan sebelumnya, jawablah dengan nyambung berdasarkan riwayat tersebut. Jangan mengulangi sapaan seperti Halo/Hai jika sudah berada di tengah percakapan.
         3. Bahasa percakapan harus luwes, asik, dan elegan. Jangan kaku sama sekali.
         4. Wajib pakai emoji yang relevan.
         5. Pecah jawaban jadi paragraf atau poin-poin pendek agar nyaman dibaca.
