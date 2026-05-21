@@ -21,113 +21,123 @@ CEREBRAS_API_KEY = os.getenv("CEREBRAS_API_KEY")
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 SAMBANOVA_API_KEY = os.getenv("SAMBANOVA_API_KEY")
 
-# Struktur untuk menerima riwayat obrolan
 class ChatRequest(BaseModel):
     pesan: str
-    session_id: str = "default"  
-    riwayat: List[Dict[str, str]] = [] # Format: [{"role": "user", "content": "halo"}, {"role": "assistant", "content": "hai"}]
+    session_id: str = "default"
+    riwayat: List[Dict[str, str]] = []
 
 @app.get("/")
 def read_root():
     return {"status": "Sistem RAG Sentuh Tanahku (Genius + Memory Mode) Aktif!"}
 
-@app.get("/test-provider/{provider}")
-def test_provider(provider: str):
-    """Test provider tertentu langsung tanpa RAG. Provider: cerebras, groq, mistral, sambanova, gemini, cloudflare"""
-    prompt = "Jawab singkat: apa itu hak tanggungan?"
-    chain_map = {label.split("/")[0]: (fn, has_key) for label, fn, has_key in FALLBACK_CHAIN}
+# --- FUNGSI PER PROVIDER (semua terima prompt + model) ---
 
-    if provider not in chain_map:
-        available = list(chain_map.keys())
-        raise HTTPException(status_code=400, detail=f"Provider tidak dikenal. Pilihan: {available}")
-
-    fn, has_key = chain_map[provider]
-    if not has_key():
-        raise HTTPException(status_code=400, detail=f"API key untuk '{provider}' belum diset di environment.")
-
-    try:
-        jawaban = fn(prompt)
-        return {"status": "success", "provider": provider, "jawaban": jawaban}
-    except Exception as e:
-        return {"status": "gagal", "provider": provider, "error": str(e)}
-
-def try_cerebras(prompt: str) -> str:
-    cerebras_client = Cerebras(api_key=CEREBRAS_API_KEY)
-    response = cerebras_client.chat.completions.create(
+def try_cerebras(prompt: str, model: str) -> str:
+    client = Cerebras(api_key=CEREBRAS_API_KEY)
+    response = client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
-        model="gpt-oss-120b",
+        model=model,
     )
     return response.choices[0].message.content
 
-def try_mistral(prompt: str) -> str:
-    response = requests.post(
-        "https://api.mistral.ai/v1/chat/completions",
-        headers={"Authorization": f"Bearer {MISTRAL_API_KEY}", "Content-Type": "application/json"},
-        json={"model": "mistral-large-latest", "messages": [{"role": "user", "content": prompt}], "max_tokens": 2048},
-        timeout=30,
-    )
-    response.raise_for_status()
-    return response.json()["choices"][0]["message"]["content"]
-
-def try_sambanova(prompt: str) -> str:
-    response = requests.post(
-        "https://api.sambanova.ai/v1/chat/completions",
-        headers={"Authorization": f"Bearer {SAMBANOVA_API_KEY}", "Content-Type": "application/json"},
-        json={"model": "Meta-Llama-3.3-70B-Instruct", "messages": [{"role": "user", "content": prompt}], "max_tokens": 2048},
-        timeout=30,
-    )
-    response.raise_for_status()
-    return response.json()["choices"][0]["message"]["content"]
-
-def try_groq(prompt: str) -> str:
-    groq_client = Groq(api_key=GROQ_API_KEY)
-    response = groq_client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+def try_groq(prompt: str, model: str) -> str:
+    client = Groq(api_key=GROQ_API_KEY)
+    response = client.chat.completions.create(
+        model=model,
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
         max_tokens=2048,
     )
     return response.choices[0].message.content
 
-def try_cloudflare(prompt: str) -> str:
-    url = f"https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/run/@cf/meta/llama-3.1-8b-instruct"
+def try_mistral(prompt: str, model: str) -> str:
+    response = requests.post(
+        "https://api.mistral.ai/v1/chat/completions",
+        headers={"Authorization": f"Bearer {MISTRAL_API_KEY}", "Content-Type": "application/json"},
+        json={"model": model, "messages": [{"role": "user", "content": prompt}], "max_tokens": 2048},
+        timeout=30,
+    )
+    response.raise_for_status()
+    return response.json()["choices"][0]["message"]["content"]
+
+def try_sambanova(prompt: str, model: str) -> str:
+    response = requests.post(
+        "https://api.sambanova.ai/v1/chat/completions",
+        headers={"Authorization": f"Bearer {SAMBANOVA_API_KEY}", "Content-Type": "application/json"},
+        json={"model": model, "messages": [{"role": "user", "content": prompt}], "max_tokens": 2048},
+        timeout=30,
+    )
+    response.raise_for_status()
+    return response.json()["choices"][0]["message"]["content"]
+
+def try_gemini(prompt: str, model: str) -> str:
+    client = genai.Client(api_key=GEMINI_API_KEY)
+    response = client.models.generate_content(model=model, contents=prompt)
+    return response.text
+
+def try_cloudflare(prompt: str, model: str) -> str:
+    url = f"https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/run/{model}"
     headers = {"Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}"}
     response = requests.post(url, headers=headers, json={"prompt": prompt}, timeout=30)
     response.raise_for_status()
     return response.json()["result"]["response"]
 
-def try_gemini(prompt: str) -> str:
-    gemini_client = genai.Client(api_key=GEMINI_API_KEY)
-    response = gemini_client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
-    return response.text
-
-# Urutan fallback: LLM pertama dicoba dulu, kalau gagal lanjut ke berikutnya
-# Tambah LLM baru cukup tambah fungsi try_xxx() dan sisipkan di list ini
+# --- FALLBACK CHAIN: urutan kualitas terbaik dulu lintas semua provider ---
+# (provider, model, fn, has_key)
 FALLBACK_CHAIN = [
-    ("cerebras/gpt-oss-120b",    try_cerebras,    lambda: bool(CEREBRAS_API_KEY)),
-    ("groq/llama-3.3-70b",       try_groq,        lambda: bool(GROQ_API_KEY)),
-    ("mistral/mistral-large",    try_mistral,      lambda: bool(MISTRAL_API_KEY)),
-    ("sambanova/llama-3.3-70b",  try_sambanova,    lambda: bool(SAMBANOVA_API_KEY)),
-    ("gemini/gemini-2.5-flash",  try_gemini,       lambda: bool(GEMINI_API_KEY)),
-    ("cloudflare/llama-3.1-8b",  try_cloudflare,   lambda: bool(CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN)),
+    ("sambanova", "DeepSeek-V3.1",                             try_sambanova,  lambda: bool(SAMBANOVA_API_KEY)),                               # 671B
+    ("cerebras",  "qwen-3-235b-a22b-instruct-2507",            try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # 235B Preview
+    ("sambanova", "gpt-oss-120b",                              try_sambanova,  lambda: bool(SAMBANOVA_API_KEY)),                               # 120B
+    ("cerebras",  "gpt-oss-120b",                              try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # 120B
+    ("sambanova", "Meta-Llama-3.3-70B-Instruct",               try_sambanova,  lambda: bool(SAMBANOVA_API_KEY)),                               # 70B
+    ("groq",      "llama-3.3-70b-versatile",                   try_groq,       lambda: bool(GROQ_API_KEY)),                                    # 70B
+    ("mistral",   "mistral-large-2411",                        try_mistral,    lambda: bool(MISTRAL_API_KEY)),                                 # ~70B
+    ("cloudflare","@cf/meta/llama-3.3-70b-instruct-fp8-fast",  try_cloudflare, lambda: bool(CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN)),  # 70B quant
+    ("mistral",   "mistral-medium-2505",                       try_mistral,    lambda: bool(MISTRAL_API_KEY)),                                 # Medium
+    ("cerebras",  "zai-glm-4.7",                               try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # Preview
+    ("groq",      "llama-3.1-8b-instant",                      try_groq,       lambda: bool(GROQ_API_KEY)),                                    # 8B
+    ("mistral",   "mistral-small-2506",                        try_mistral,    lambda: bool(MISTRAL_API_KEY)),                                 # Small
+    ("cerebras",  "llama3.1-8b",                               try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # 8B
+    ("cloudflare","@cf/meta/llama-3.1-8b-instruct",            try_cloudflare, lambda: bool(CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN)),  # 8B
+    ("gemini",    "gemini-2.5-flash",                          try_gemini,     lambda: bool(GEMINI_API_KEY)),                                  # quota kecil
+    ("gemini",    "gemini-2.5-flash-lite",                     try_gemini,     lambda: bool(GEMINI_API_KEY)),                                  # quota kecil
 ]
 
-def generate_jawaban(prompt: str) -> tuple[str, str]:
-    """Coba LLM satu per satu sesuai urutan FALLBACK_CHAIN. Return (jawaban, model_label)."""
+def generate_jawaban(prompt: str) -> tuple[str, str, str]:
+    """Coba LLM satu per satu. Return (jawaban, provider, model)."""
     errors = []
-    for label, fn, has_key in FALLBACK_CHAIN:
+    for provider, model, fn, has_key in FALLBACK_CHAIN:
         if not has_key():
             continue
         try:
-            return fn(prompt), label
+            return fn(prompt, model), provider, model
         except Exception as e:
-            print(f"[fallback] {label} gagal: {e}")
-            errors.append(f"{label}: {e}")
+            print(f"[fallback] {provider}/{model} gagal: {e}")
+            errors.append(f"{provider}/{model}: {e}")
     raise Exception("Semua LLM gagal. Detail: " + " | ".join(errors))
 
+@app.get("/test-provider/{provider}")
+def test_provider(provider: str):
+    """Test semua model dari provider tertentu. Provider: sambanova, cerebras, groq, mistral, cloudflare, gemini"""
+    prompt = "Jawab singkat: apa itu hak tanggungan?"
+    available = list(dict.fromkeys(p for p, m, fn, hk in FALLBACK_CHAIN))
+
+    if provider not in available:
+        raise HTTPException(status_code=400, detail=f"Provider tidak dikenal. Pilihan: {available}")
+
+    for prov, model, fn, has_key in FALLBACK_CHAIN:
+        if prov != provider:
+            continue
+        if not has_key():
+            raise HTTPException(status_code=400, detail=f"API key untuk '{provider}' belum diset.")
+        try:
+            jawaban = fn(prompt, model)
+            return {"status": "success", "provider": prov, "model": model, "jawaban": jawaban}
+        except Exception as e:
+            print(f"[test] {prov}/{model} gagal: {e}")
+            continue
+
+    raise HTTPException(status_code=500, detail=f"Semua model dari '{provider}' gagal.")
 
 @app.post("/api/chat")
 def chat_endpoint(request: ChatRequest):
@@ -137,16 +147,13 @@ def chat_endpoint(request: ChatRequest):
         raise HTTPException(status_code=500, detail="GEMINI_API_KEY belum diset (wajib untuk embedding).")
 
     try:
-        # Embedding selalu pakai Gemini karena knowledge base dibangun dengan dimensi 768
         gemini_client = genai.Client(api_key=GEMINI_API_KEY)
 
-        # 1. Jadikan pertanyaan sebagai vektor (DENGAN DIMENSI 768)
+        # 1. Embedding (selalu Gemini, 768 dim)
         emb_response = gemini_client.models.embed_content(
             model='gemini-embedding-001',
             contents=request.pesan,
-            config=types.EmbedContentConfig(
-                output_dimensionality=768 # <-- PENYESUAIAN WAJIB agar muat di Supabase!
-            )
+            config=types.EmbedContentConfig(output_dimensionality=768)
         )
         query_vector = emb_response.embeddings[0].values
 
@@ -157,18 +164,13 @@ def chat_endpoint(request: ChatRequest):
             "Authorization": f"Bearer {SUPABASE_KEY}",
             "Content-Type": "application/json"
         }
-        
-        payload = {
+        db_response = requests.post(rpc_url, headers=headers, json={
             "query_embedding": query_vector,
-            "match_threshold": 0.5, 
-            "match_count": 3        
-        }
-        
-        db_response = requests.post(rpc_url, headers=headers, json=payload)
-        
+            "match_threshold": 0.5,
+            "match_count": 3
+        })
         if db_response.status_code != 200:
             raise Exception(f"Error Supabase: {db_response.text}")
-            
         documents = db_response.json()
 
         sumber_list = []
@@ -181,35 +183,32 @@ def chat_endpoint(request: ChatRequest):
                 kategori = metadata.get('kategori_layanan', 'Layanan Umum BPN')
                 referensi = metadata.get('referensi_hukum', 'SOP Internal')
                 isi_konten = doc.get('content', '')
-                
                 sumber_list.append(f"{kategori} ({referensi})")
                 konteks_parts.append(f"--- [Kategori: {kategori} | Dasar Hukum: {referensi}] ---\n{isi_konten}")
-            
             konteks_dokumen = "\n\n".join(konteks_parts)
             sumber_list = list(set(sumber_list))
 
-        # 3. RANGKAI RIWAYAT CHAT SEBELUMNYA
+        # 3. Rangkai riwayat chat
         teks_riwayat = ""
         if request.riwayat:
             teks_riwayat = "\n--- RIWAYAT PERCAKAPAN SEBELUMNYA ---\n"
-            # Ambil maksimal 4 chat terakhir agar konteks tidak terlalu panjang dan hemat token
             for chat in request.riwayat[-4:]:
                 pengirim = "User" if chat["role"] == "user" else "Senta"
                 teks_riwayat += f"{pengirim}: {chat['content']}\n"
             teks_riwayat += "--------------------------------------\n"
 
-        # 4. Inject Riwayat ke Prompt Senta (PERSONA BESTIE & NGELES ELEGAN)
+        # 4. Generate jawaban
         prompt_sistem = f"""
         PERAN:
-        Kamu adalah "Senta" (Sentuh Tanahku AI), asisten virtual dari BPN. 
+        Kamu adalah "Senta" (Sentuh Tanahku AI), asisten virtual dari BPN.
         Gaya bicaramu itu seperti teman sendiri (bestie) yang friendly, asik, santai, elegan, dan suka pakai emoji yang pas! ✨
         {teks_riwayat}
-        
+
         DATA REFERENSI (HANYA JAWAB DARI SINI):
         {konteks_dokumen}
 
         ATURAN GAYA BICARA:
-        1. Sapaan: Panggil user "Kak". 
+        1. Sapaan: Panggil user "Kak".
         2. Perhatikan [RIWAYAT PERCAKAPAN SEBELUMNYA]. Jika user merujuk ke obrolan sebelumnya, jawablah dengan nyambung berdasarkan riwayat tersebut. Jangan mengulangi sapaan seperti Halo/Hai jika sudah berada di tengah percakapan.
         3. Bahasa percakapan harus luwes, asik, dan elegan. Jangan kaku sama sekali.
         4. Wajib pakai emoji yang relevan.
@@ -223,15 +222,16 @@ def chat_endpoint(request: ChatRequest):
         PERTANYAAN USER SAAT INI: {request.pesan}
         """
 
-        jawaban, model_label = generate_jawaban(prompt_sistem)
+        jawaban, provider, model = generate_jawaban(prompt_sistem)
 
         return {
             "status": "success",
-            "model_used": model_label,
+            "provider": provider,
+            "model_used": model,
             "jawaban": jawaban,
             "sumber": sumber_list
         }
 
     except Exception as e:
-        print(f"Error: {str(e)}") 
+        print(f"Error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
