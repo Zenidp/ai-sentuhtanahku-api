@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from google import genai
 from google.genai import types
 from groq import Groq
+from cerebras.cloud.sdk import Cerebras
 import os
 import requests
 from typing import List, Dict
@@ -31,14 +32,12 @@ def read_root():
     return {"status": "Sistem RAG Sentuh Tanahku (Genius + Memory Mode) Aktif!"}
 
 def try_cerebras(prompt: str) -> str:
-    response = requests.post(
-        "https://api.cerebras.ai/v1/chat/completions",
-        headers={"Authorization": f"Bearer {CEREBRAS_API_KEY}", "Content-Type": "application/json"},
-        json={"model": "llama3.3-70b", "messages": [{"role": "user", "content": prompt}], "max_tokens": 2048},
-        timeout=30,
+    cerebras_client = Cerebras(api_key=CEREBRAS_API_KEY)
+    response = cerebras_client.chat.completions.create(
+        messages=[{"role": "user", "content": prompt}],
+        model="llama3.3-70b",
     )
-    response.raise_for_status()
-    return response.json()["choices"][0]["message"]["content"]
+    return response.choices[0].message.content
 
 def try_mistral(prompt: str) -> str:
     response = requests.post(
