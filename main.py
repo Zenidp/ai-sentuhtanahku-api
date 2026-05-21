@@ -31,6 +31,26 @@ class ChatRequest(BaseModel):
 def read_root():
     return {"status": "Sistem RAG Sentuh Tanahku (Genius + Memory Mode) Aktif!"}
 
+@app.get("/test-provider/{provider}")
+def test_provider(provider: str):
+    """Test provider tertentu langsung tanpa RAG. Provider: cerebras, groq, mistral, sambanova, gemini, cloudflare"""
+    prompt = "Jawab singkat: apa itu hak tanggungan?"
+    chain_map = {label.split("/")[0]: (fn, has_key) for label, fn, has_key in FALLBACK_CHAIN}
+
+    if provider not in chain_map:
+        available = list(chain_map.keys())
+        raise HTTPException(status_code=400, detail=f"Provider tidak dikenal. Pilihan: {available}")
+
+    fn, has_key = chain_map[provider]
+    if not has_key():
+        raise HTTPException(status_code=400, detail=f"API key untuk '{provider}' belum diset di environment.")
+
+    try:
+        jawaban = fn(prompt)
+        return {"status": "success", "provider": provider, "jawaban": jawaban}
+    except Exception as e:
+        return {"status": "gagal", "provider": provider, "error": str(e)}
+
 def try_cerebras(prompt: str) -> str:
     cerebras_client = Cerebras(api_key=CEREBRAS_API_KEY)
     response = cerebras_client.chat.completions.create(
