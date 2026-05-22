@@ -165,6 +165,33 @@ def generate_jawaban(prompt: str) -> tuple[str, str, str]:
             errors.append(f"{provider}/{model}: {e}")
     raise Exception("Semua LLM gagal. Detail: " + " | ".join(errors))
 
+@app.get("/test-provider/{provider}/{model:path}")
+def test_provider_model(provider: str, model: str):
+    """Test satu model spesifik. Contoh: /test-provider/openrouter/meta-llama/llama-3.3-70b-instruct:free"""
+    prompt = "Jawab singkat: apa itu hak tanggungan?"
+
+    # Cari fungsi provider dari FALLBACK_CHAIN
+    provider_fn = None
+    provider_key_fn = None
+    for prov, m, fn, has_key in FALLBACK_CHAIN:
+        if prov == provider:
+            provider_fn = fn
+            provider_key_fn = has_key
+            break
+
+    if provider_fn is None:
+        available = list(dict.fromkeys(p for p, m, fn, hk in FALLBACK_CHAIN))
+        raise HTTPException(status_code=400, detail=f"Provider tidak dikenal. Pilihan: {available}")
+
+    if not provider_key_fn():
+        raise HTTPException(status_code=400, detail=f"API key untuk '{provider}' belum diset.")
+
+    try:
+        jawaban = provider_fn(prompt, model)
+        return {"status": "success", "provider": provider, "model": model, "jawaban": jawaban}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail={"message": f"{provider}/{model} gagal.", "error": str(e)})
+
 @app.get("/test-provider/{provider}")
 def test_provider(provider: str):
     """Test semua model dari provider tertentu. Provider: sambanova, cerebras, groq, mistral, cloudflare, gemini, nvidia, openrouter, scaleway"""
