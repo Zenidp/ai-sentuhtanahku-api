@@ -124,19 +124,23 @@ def try_scaleway(prompt: str, model: str) -> str:
 # (provider, model, fn, has_key)
 FALLBACK_CHAIN = [
     ("sambanova",  "DeepSeek-V3.1",                                          try_sambanova,  lambda: bool(SAMBANOVA_API_KEY)),                               # 671B
-    ("cerebras",   "qwen-3-235b-a22b-instruct-2507",                         try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # 235B Preview
+    ("cerebras",   "qwen-3-235b-a22b-instruct-2507",                         try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # 235B
+    ("openrouter", "nousresearch/hermes-3-llama-3.1-405b:free",              try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # 405B free
     ("nvidia",     "nvidia/llama-3.1-nemotron-ultra-253b-v1",                try_nvidia,     lambda: bool(NVIDIA_NIM_API_KEY)),                              # 253B
-    ("openrouter", "nvidia/llama-3.1-nemotron-ultra-253b-v1:free",           try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # 253B free
+    ("openrouter", "openai/gpt-oss-120b:free",                               try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # 120B free
+    ("openrouter", "nvidia/nemotron-3-super-120b-a12b:free",                 try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # 120B free
+    ("scaleway",   "qwen3-235b-a22b-instruct-2507",                          try_scaleway,   lambda: bool(SCALEWAY_API_KEY)),                                # 235B
     ("sambanova",  "gpt-oss-120b",                                           try_sambanova,  lambda: bool(SAMBANOVA_API_KEY)),                               # 120B
     ("cerebras",   "gpt-oss-120b",                                           try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # 120B
+    ("scaleway",   "gpt-oss-120b",                                           try_scaleway,   lambda: bool(SCALEWAY_API_KEY)),                                # 120B
     ("sambanova",  "Meta-Llama-3.3-70B-Instruct",                            try_sambanova,  lambda: bool(SAMBANOVA_API_KEY)),                               # 70B
     ("groq",       "llama-3.3-70b-versatile",                                try_groq,       lambda: bool(GROQ_API_KEY)),                                    # 70B
     ("mistral",    "mistral-large-2411",                                     try_mistral,    lambda: bool(MISTRAL_API_KEY)),                                 # ~70B
     ("cloudflare", "@cf/meta/llama-3.3-70b-instruct-fp8-fast",               try_cloudflare, lambda: bool(CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN)),  # 70B quant
     ("nvidia",     "meta/llama-3.3-70b-instruct",                            try_nvidia,     lambda: bool(NVIDIA_NIM_API_KEY)),                              # 70B
     ("openrouter", "meta-llama/llama-3.3-70b-instruct:free",                 try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # 70B free
-    ("scaleway",   "llama-3.3-70b-instruct",                                 try_scaleway,   lambda: bool(SCALEWAY_API_KEY)),                                # 70B free
-    ("openrouter", "deepseek/deepseek-r1-distill-llama-70b:free",            try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # 70B reasoning free
+    ("scaleway",   "llama-3.3-70b-instruct",                                 try_scaleway,   lambda: bool(SCALEWAY_API_KEY)),                                # 70B
+    ("openrouter", "deepseek/deepseek-v4-flash:free",                        try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # large free
     ("mistral",    "mistral-medium-2505",                                    try_mistral,    lambda: bool(MISTRAL_API_KEY)),                                 # Medium
     ("cerebras",   "zai-glm-4.7",                                            try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # Preview
     ("groq",       "llama-3.1-8b-instant",                                   try_groq,       lambda: bool(GROQ_API_KEY)),                                    # 8B
@@ -162,13 +166,14 @@ def generate_jawaban(prompt: str) -> tuple[str, str, str]:
 
 @app.get("/test-provider/{provider}")
 def test_provider(provider: str):
-    """Test semua model dari provider tertentu. Provider: sambanova, cerebras, groq, mistral, cloudflare, gemini"""
+    """Test semua model dari provider tertentu. Provider: sambanova, cerebras, groq, mistral, cloudflare, gemini, nvidia, openrouter, scaleway"""
     prompt = "Jawab singkat: apa itu hak tanggungan?"
     available = list(dict.fromkeys(p for p, m, fn, hk in FALLBACK_CHAIN))
 
     if provider not in available:
         raise HTTPException(status_code=400, detail=f"Provider tidak dikenal. Pilihan: {available}")
 
+    errors = []
     for prov, model, fn, has_key in FALLBACK_CHAIN:
         if prov != provider:
             continue
@@ -178,10 +183,12 @@ def test_provider(provider: str):
             jawaban = fn(prompt, model)
             return {"status": "success", "provider": prov, "model": model, "jawaban": jawaban}
         except Exception as e:
-            print(f"[test] {prov}/{model} gagal: {e}")
+            error_msg = f"{model}: {e}"
+            print(f"[test] {prov}/{error_msg}")
+            errors.append(error_msg)
             continue
 
-    raise HTTPException(status_code=500, detail=f"Semua model dari '{provider}' gagal.")
+    raise HTTPException(status_code=500, detail={"message": f"Semua model dari '{provider}' gagal.", "errors": errors})
 
 @app.post("/api/chat")
 def chat_endpoint(request: ChatRequest):
