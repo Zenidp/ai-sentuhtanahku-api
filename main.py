@@ -130,7 +130,7 @@ FALLBACK_CHAIN = [
     ("cerebras",   "qwen-3-235b-a22b-instruct-2507",                         try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # 235B
     ("openrouter", "nousresearch/hermes-3-llama-3.1-405b:free",              try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # 405B free
     ("openrouter", "openrouter/owl-alpha",                                   try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # high-perf, 1M ctx, 1.2T token/week free
-    ("nvidia",     "nvidia/llama-3.1-nemotron-ultra-253b-v1",                try_nvidia,     lambda: bool(NVIDIA_NIM_API_KEY)),                              # 253B
+    ("nvidia",     "nvidia/nemotron-3-super-120b-a12b",                       try_nvidia,     lambda: bool(NVIDIA_NIM_API_KEY)),                              # 120B
     ("openrouter", "openai/gpt-oss-120b:free",                               try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # 120B free
     ("openrouter", "nvidia/nemotron-3-super-120b-a12b:free",                 try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # 120B free
     ("scaleway",   "qwen3-235b-a22b-instruct-2507",                          try_scaleway,   lambda: bool(SCALEWAY_API_KEY)),                                # 235B
@@ -142,6 +142,7 @@ FALLBACK_CHAIN = [
     ("mistral",    "mistral-large-2411",                                     try_mistral,    lambda: bool(MISTRAL_API_KEY)),                                 # ~70B
     ("cloudflare", "@cf/meta/llama-3.3-70b-instruct-fp8-fast",               try_cloudflare, lambda: bool(CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN)),  # 70B quant
     ("nvidia",     "meta/llama-3.3-70b-instruct",                            try_nvidia,     lambda: bool(NVIDIA_NIM_API_KEY)),                              # 70B
+    ("nvidia",     "nvidia/llama-3.3-nemotron-super-49b-v1",                 try_nvidia,     lambda: bool(NVIDIA_NIM_API_KEY)),                              # 49B
     ("openrouter", "meta-llama/llama-3.3-70b-instruct:free",                 try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # 70B free
     ("scaleway",   "llama-3.3-70b-instruct",                                 try_scaleway,   lambda: bool(SCALEWAY_API_KEY)),                                # 70B
     ("openrouter", "deepseek/deepseek-v4-flash:free",                        try_openrouter, lambda: bool(OPENROUTER_API_KEY)),                              # large free
@@ -150,6 +151,7 @@ FALLBACK_CHAIN = [
     ("groq",       "llama-3.1-8b-instant",                                   try_groq,       lambda: bool(GROQ_API_KEY)),                                    # 8B
     ("mistral",    "mistral-small-2506",                                     try_mistral,    lambda: bool(MISTRAL_API_KEY)),                                 # Small
     ("cerebras",   "llama3.1-8b",                                            try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # 8B
+    ("nvidia",     "nvidia/llama-3.1-nemotron-nano-8b-v1",                   try_nvidia,     lambda: bool(NVIDIA_NIM_API_KEY)),                              # 8B
     ("cloudflare", "@cf/meta/llama-3.1-8b-instruct",                         try_cloudflare, lambda: bool(CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN)),  # 8B
     ("gemini",     "gemini-2.5-flash",                                       try_gemini,     lambda: bool(GEMINI_API_KEY)),                                  # quota kecil
     ("gemini",     "gemini-2.5-flash-lite",                                  try_gemini,     lambda: bool(GEMINI_API_KEY)),                                  # quota kecil
