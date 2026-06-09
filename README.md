@@ -1,71 +1,92 @@
-<a href="https://chat.vercel.ai/">
-  <img alt="Next.js 14 and App Router-ready AI chatbot." src="app/(chat)/opengraph-image.png">
-  <h1 align="center">Chat SDK</h1>
-</a>
+# 🏛️ Sentuh Tanahku AI — Frontend (Senta UI)
 
-<p align="center">
-    Chat SDK is a free, open-source template built with Next.js and the AI SDK that helps you quickly build powerful chatbot applications.
-</p>
+> Antarmuka chat modern untuk **Senta**, asisten virtual layanan pertanahan BPN.
 
-<p align="center">
-  <a href="https://chat-sdk.dev"><strong>Read Docs</strong></a> ·
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#model-providers"><strong>Model Providers</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
-  <a href="#running-locally"><strong>Running locally</strong></a>
-</p>
-<br/>
+Frontend ini adalah antarmuka pengguna berbasis Next.js yang menyediakan pengalaman chat yang elegan dan responsif untuk berinteraksi dengan sistem RAG Sentuh Tanahku AI.
 
-## Features
+> **Repositori terkait:** Backend API tersedia di [`ai-sentuhtanahku-api`](https://github.com/username/ai-sentuhtanahku-api) — lihat README di sana untuk dokumentasi sistem lengkap dan arsitektur keseluruhan.
 
-- [Next.js](https://nextjs.org) App Router
-  - Advanced routing for seamless navigation and performance
-  - React Server Components (RSCs) and Server Actions for server-side rendering and increased performance
-- [AI SDK](https://ai-sdk.dev/docs/introduction)
-  - Unified API for generating text, structured objects, and tool calls with LLMs
-  - Hooks for building dynamic chat and generative user interfaces
-  - Supports xAI (default), OpenAI, Fireworks, and other model providers
-- [shadcn/ui](https://ui.shadcn.com)
-  - Styling with [Tailwind CSS](https://tailwindcss.com)
-  - Component primitives from [Radix UI](https://radix-ui.com) for accessibility and flexibility
-- Data Persistence
-  - [Neon Serverless Postgres](https://vercel.com/marketplace/neon) for saving chat history and user data
-  - [Vercel Blob](https://vercel.com/storage/blob) for efficient file storage
-- [Auth.js](https://authjs.dev)
-  - Simple and secure authentication
+---
 
-## Model Providers
+## ✨ Fitur
 
-This template uses the [Vercel AI Gateway](https://vercel.com/docs/ai-gateway) to access multiple AI models through a unified interface. The default configuration includes [xAI](https://x.ai) models (`grok-2-vision-1212`, `grok-3-mini`) routed through the gateway.
+- **Chat real-time** dengan streaming jawaban
+- **Riwayat percakapan** tersimpan per user (PostgreSQL)
+- **Model selector** — dapat berganti model AI
+- **Artifact panel** — render kode, dokumen, dan spreadsheet hasil AI
+- **Autentikasi** dengan NextAuth v5
+- **Dark/Light mode**
+- **Responsive** untuk desktop dan mobile
 
-### AI Gateway Authentication
+---
 
-**For Vercel deployments**: Authentication is handled automatically via OIDC tokens.
+## 🛠️ Tech Stack
 
-**For non-Vercel deployments**: You need to provide an AI Gateway API key by setting the `AI_GATEWAY_API_KEY` environment variable in your `.env.local` file.
+| Komponen | Teknologi |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript + React 19 |
+| AI Integration | Vercel AI SDK v6 + AI Gateway |
+| Default Model | `google/gemini-2.5-flash-lite` (Senta AI v1.0) |
+| Auth | NextAuth v5 |
+| ORM | Drizzle ORM |
+| Database | PostgreSQL (Vercel Postgres) |
+| Cache | Redis (Vercel KV) |
+| Storage | Vercel Blob |
+| Styling | Tailwind CSS v4 + Radix UI |
+| Package Manager | pnpm |
 
-With the [AI SDK](https://ai-sdk.dev/docs/introduction), you can also switch to direct LLM providers like [OpenAI](https://openai.com), [Anthropic](https://anthropic.com), [Cohere](https://cohere.com/), and [many more](https://ai-sdk.dev/providers/ai-sdk-providers) with just a few lines of code.
+---
 
-## Deploy Your Own
+## 🚀 Setup Lokal
 
-You can deploy your own version of the Next.js AI Chatbot to Vercel with one click:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/templates/next.js/nextjs-ai-chatbot)
-
-## Running locally
-
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
-
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various AI and authentication provider accounts.
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
-
+**1. Install dependencies**
 ```bash
 pnpm install
-pnpm db:migrate # Setup database or apply latest database changes
+```
+
+**2. Buat `.env.local`**
+```env
+AUTH_SECRET=your-random-secret-32-chars
+AI_GATEWAY_API_KEY=your-vercel-ai-gateway-key
+BLOB_READ_WRITE_TOKEN=your-vercel-blob-token
+POSTGRES_URL=your-postgres-connection-string
+REDIS_URL=your-redis-connection-string
+```
+
+**3. Migrasi database**
+```bash
+pnpm db:migrate
+```
+
+**4. Jalankan development server**
+```bash
 pnpm dev
 ```
 
-Your app template should now be running on [localhost:3000](http://localhost:3000).
+Akses di `http://localhost:3000`
+
+---
+
+## 📋 Scripts
+
+```bash
+pnpm dev          # Development server (Turbopack)
+pnpm build        # Build production
+pnpm start        # Jalankan production build
+pnpm db:migrate   # Migrasi database
+pnpm db:studio    # Drizzle Studio GUI
+pnpm test         # Playwright E2E tests
+pnpm lint         # Linting
+pnpm format       # Format kode
+```
+
+---
+
+## 🚢 Deploy ke Vercel
+
+1. Connect repo ke Vercel
+2. Tambahkan semua environment variables
+3. Deploy — otomatis saat push ke `main`
+
+Live: **https://ai-sentuhtanahku-ui.vercel.app**
