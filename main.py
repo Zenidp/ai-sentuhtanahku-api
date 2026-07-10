@@ -5,6 +5,7 @@ from google.genai import types
 from groq import Groq
 from cerebras.cloud.sdk import Cerebras
 import os
+import re
 import requests
 from typing import List, Dict
 
@@ -13,7 +14,7 @@ app = FastAPI(title="API AI Sentuh Tanahku (Genius + Memory Mode)")
 # --- KONFIGURASI ---
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# GEMINI: dukung beberapa API key untuk fallback (dikumpulkan di _collect_gemini_keys di bawah)
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 CLOUDFLARE_ACCOUNT_ID = os.getenv("CLOUDFLARE_ACCOUNT_ID")
 CLOUDFLARE_API_TOKEN = os.getenv("CLOUDFLARE_API_TOKEN")
@@ -23,6 +24,64 @@ SAMBANOVA_API_KEY = os.getenv("SAMBANOVA_API_KEY")
 NVIDIA_NIM_API_KEY = os.getenv("NVIDIA_NIM_API_KEY")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 SCALEWAY_API_KEY = os.getenv("SCALEWAY_API_KEY")
+
+
+def _collect_gemini_keys() -> List[str]:
+    """Kumpulkan semua GEMINI API key dari env untuk fallback.
+
+    Dukung dua cara (boleh dipakai bareng):
+      - GEMINI_API_KEYS = "key1,key2,key3"          (dipisah koma, paling praktis)
+      - GEMINI_API_KEY, GEMINI_API_KEY_2 ... _5     (variabel terpisah)
+    Urutan dipertahankan & duplikat dibuang.
+    """
+    raw = list(os.getenv("GEMINI_API_KEYS", "").split(","))
+    for name in ("GEMINI_API_KEY", "GEMINI_API_KEY_2", "GEMINI_API_KEY_3",
+                 "GEMINI_API_KEY_4", "GEMINI_API_KEY_5"):
+        raw.append(os.getenv(name, ""))
+    keys, seen = [], set()
+    for k in raw:
+        k = (k or "").strip()
+        if k and k not in seen:
+            seen.add(k)
+            keys.append(k)
+    return keys
+
+
+GEMINI_API_KEYS = _collect_gemini_keys()
+
+
+def _redact(text) -> str:
+    """Sembunyikan API key / token dari string error sebelum dikirim ke client."""
+    s = str(text)
+    s = re.sub(r"AIza[0-9A-Za-z_\-]{10,}", "AIza***REDACTED***", s)
+    s = re.sub(r"(sk-|xai-|nvapi-|gsk_)[0-9A-Za-z_\-]{6,}", r"\1***REDACTED***", s)
+    s = re.sub(r"(Bearer\s+)[0-9A-Za-z._\-]{6,}", r"\1***REDACTED***", s)
+    return s
+
+
+def _gemini_embed(text: str) -> list:
+    """Embedding via Gemini (768 dim) dengan fallback lintas beberapa API key.
+
+    Kalau satu key error/suspended/kena limit, otomatis coba key berikutnya —
+    persis pola FALLBACK_CHAIN pada LLM.
+    """
+    if not GEMINI_API_KEYS:
+        raise Exception("Tidak ada GEMINI_API_KEY yang diset (wajib untuk embedding).")
+    errors = []
+    for idx, key in enumerate(GEMINI_API_KEYS, start=1):
+        try:
+            client = genai.Client(api_key=key)
+            resp = client.models.embed_content(
+                model="gemini-embedding-001",
+                contents=text,
+                config=types.EmbedContentConfig(output_dimensionality=768),
+            )
+            return resp.embeddings[0].values
+        except Exception as e:
+            print(f"[embed] Gemini key #{idx} gagal: {e}")
+            errors.append(f"key#{idx}: {e}")
+    raise Exception("Semua GEMINI_API_KEY gagal untuk embedding. Detail: " + " | ".join(errors))
+
 
 class ChatRequest(BaseModel):
     pesan: str
@@ -74,9 +133,16 @@ def try_sambanova(prompt: str, model: str) -> str:
     return response.json()["choices"][0]["message"]["content"]
 
 def try_gemini(prompt: str, model: str) -> str:
-    client = genai.Client(api_key=GEMINI_API_KEY)
-    response = client.models.generate_content(model=model, contents=prompt)
-    return response.text
+    errors = []
+    for idx, key in enumerate(GEMINI_API_KEYS, start=1):
+        try:
+            client = genai.Client(api_key=key)
+            response = client.models.generate_content(model=model, contents=prompt)
+            return response.text
+        except Exception as e:
+            print(f"[gemini] key #{idx} gagal ({model}): {e}")
+            errors.append(f"key#{idx}: {e}")
+    raise Exception("Semua GEMINI_API_KEY gagal. Detail: " + " | ".join(errors))
 
 def try_cloudflare(prompt: str, model: str) -> str:
     url = f"https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/run/{model}"
@@ -153,8 +219,8 @@ FALLBACK_CHAIN = [
     ("cerebras",   "llama3.1-8b",                                            try_cerebras,   lambda: bool(CEREBRAS_API_KEY)),                                # 8B
     ("nvidia",     "nvidia/llama-3.1-nemotron-nano-8b-v1",                   try_nvidia,     lambda: bool(NVIDIA_NIM_API_KEY)),                              # 8B
     ("cloudflare", "@cf/meta/llama-3.1-8b-instruct",                         try_cloudflare, lambda: bool(CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN)),  # 8B
-    ("gemini",     "gemini-2.5-flash",                                       try_gemini,     lambda: bool(GEMINI_API_KEY)),                                  # quota kecil
-    ("gemini",     "gemini-2.5-flash-lite",                                  try_gemini,     lambda: bool(GEMINI_API_KEY)),                                  # quota kecil
+    ("gemini",     "gemini-2.5-flash",                                       try_gemini,     lambda: bool(GEMINI_API_KEYS)),                                  # quota kecil
+    ("gemini",     "gemini-2.5-flash-lite",                                  try_gemini,     lambda: bool(GEMINI_API_KEYS)),                                  # quota kecil
 ]
 
 def generate_jawaban(prompt: str) -> tuple[str, str, str]:
@@ -195,7 +261,7 @@ def test_provider_model(provider: str, model: str):
         jawaban = provider_fn(prompt, model)
         return {"status": "success", "provider": provider, "model": model, "jawaban": jawaban}
     except Exception as e:
-        raise HTTPException(status_code=500, detail={"message": f"{provider}/{model} gagal.", "error": str(e)})
+        raise HTTPException(status_code=500, detail={"message": f"{provider}/{model} gagal.", "error": _redact(e)})
 
 @app.get("/test-provider/{provider}")
 def test_provider(provider: str):
@@ -216,9 +282,8 @@ def test_provider(provider: str):
             jawaban = fn(prompt, model)
             return {"status": "success", "provider": prov, "model": model, "jawaban": jawaban}
         except Exception as e:
-            error_msg = f"{model}: {e}"
-            print(f"[test] {prov}/{error_msg}")
-            errors.append(error_msg)
+            print(f"[test] {prov}/{model}: {e}")
+            errors.append(f"{model}: {_redact(e)}")
             continue
 
     raise HTTPException(status_code=500, detail={"message": f"Semua model dari '{provider}' gagal.", "errors": errors})
@@ -227,19 +292,12 @@ def test_provider(provider: str):
 def chat_endpoint(request: ChatRequest):
     if not SUPABASE_URL or not SUPABASE_KEY:
         raise HTTPException(status_code=500, detail="Konfigurasi server belum lengkap (API Key hilang).")
-    if not GEMINI_API_KEY:
+    if not GEMINI_API_KEYS:
         raise HTTPException(status_code=500, detail="GEMINI_API_KEY belum diset (wajib untuk embedding).")
 
     try:
-        gemini_client = genai.Client(api_key=GEMINI_API_KEY)
-
-        # 1. Embedding (selalu Gemini, 768 dim)
-        emb_response = gemini_client.models.embed_content(
-            model='gemini-embedding-001',
-            contents=request.pesan,
-            config=types.EmbedContentConfig(output_dimensionality=768)
-        )
-        query_vector = emb_response.embeddings[0].values
+        # 1. Embedding (selalu Gemini, 768 dim) — dengan fallback multi-key
+        query_vector = _gemini_embed(request.pesan)
 
         # 2. Cari dokumen di Supabase
         rpc_url = f"{SUPABASE_URL}/rest/v1/rpc/match_bpn_knowledge"
@@ -316,6 +374,12 @@ def chat_endpoint(request: ChatRequest):
             "sumber": sumber_list
         }
 
+    except HTTPException:
+        raise
     except Exception as e:
-        print(f"Error: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+        # Detail lengkap HANYA di log server — jangan dikirim ke client (bisa bocorkan API key)
+        print(f"[chat_endpoint] Error: {e}")
+        raise HTTPException(
+            status_code=502,
+            detail="Layanan AI sedang bermasalah. Coba lagi beberapa saat lagi.",
+        )
