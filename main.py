@@ -51,10 +51,11 @@ GEMINI_API_KEYS = _collect_gemini_keys()
 
 
 def _redact(text) -> str:
-    """Sembunyikan API key / token dari string error sebelum dikirim ke client."""
+    """Sembunyikan API key / token dari string error — untuk respons client MAUPUN log."""
     s = str(text)
     s = re.sub(r"AIza[0-9A-Za-z_\-]{10,}", "AIza***REDACTED***", s)
-    s = re.sub(r"(sk-|xai-|nvapi-|gsk_)[0-9A-Za-z_\-]{6,}", r"\1***REDACTED***", s)
+    s = re.sub(r"AQ\.[0-9A-Za-z_\-]{16,}", "AQ.***REDACTED***", s)
+    s = re.sub(r"(sk-|xai-|nvapi-|csk-|gsk_)[0-9A-Za-z_\-]{6,}", r"\1***REDACTED***", s)
     s = re.sub(r"(Bearer\s+)[0-9A-Za-z._\-]{6,}", r"\1***REDACTED***", s)
     return s
 
@@ -78,8 +79,8 @@ def _gemini_embed(text: str) -> list:
             )
             return resp.embeddings[0].values
         except Exception as e:
-            print(f"[embed] Gemini key #{idx} gagal: {e}")
-            errors.append(f"key#{idx}: {e}")
+            print(f"[embed] Gemini key #{idx} gagal: {_redact(e)}")
+            errors.append(f"key#{idx}: {_redact(e)}")
     raise Exception("Semua GEMINI_API_KEY gagal untuk embedding. Detail: " + " | ".join(errors))
 
 
@@ -140,8 +141,8 @@ def try_gemini(prompt: str, model: str) -> str:
             response = client.models.generate_content(model=model, contents=prompt)
             return response.text
         except Exception as e:
-            print(f"[gemini] key #{idx} gagal ({model}): {e}")
-            errors.append(f"key#{idx}: {e}")
+            print(f"[gemini] key #{idx} gagal ({model}): {_redact(e)}")
+            errors.append(f"key#{idx}: {_redact(e)}")
     raise Exception("Semua GEMINI_API_KEY gagal. Detail: " + " | ".join(errors))
 
 def try_cloudflare(prompt: str, model: str) -> str:
@@ -232,8 +233,8 @@ def generate_jawaban(prompt: str) -> tuple[str, str, str]:
         try:
             return fn(prompt, model), provider, model
         except Exception as e:
-            print(f"[fallback] {provider}/{model} gagal: {e}")
-            errors.append(f"{provider}/{model}: {e}")
+            print(f"[fallback] {provider}/{model} gagal: {_redact(e)}")
+            errors.append(f"{provider}/{model}: {_redact(e)}")
     raise Exception("Semua LLM gagal. Detail: " + " | ".join(errors))
 
 @app.get("/test-provider/{provider}/{model:path}")
@@ -282,7 +283,7 @@ def test_provider(provider: str):
             jawaban = fn(prompt, model)
             return {"status": "success", "provider": prov, "model": model, "jawaban": jawaban}
         except Exception as e:
-            print(f"[test] {prov}/{model}: {e}")
+            print(f"[test] {prov}/{model}: {_redact(e)}")
             errors.append(f"{model}: {_redact(e)}")
             continue
 
@@ -378,7 +379,7 @@ def chat_endpoint(request: ChatRequest):
         raise
     except Exception as e:
         # Detail lengkap HANYA di log server — jangan dikirim ke client (bisa bocorkan API key)
-        print(f"[chat_endpoint] Error: {e}")
+        print(f"[chat_endpoint] Error: {_redact(e)}")
         raise HTTPException(
             status_code=502,
             detail="Layanan AI sedang bermasalah. Coba lagi beberapa saat lagi.",
