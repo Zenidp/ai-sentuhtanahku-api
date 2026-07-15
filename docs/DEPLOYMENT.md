@@ -18,7 +18,7 @@ Environment variables (Settings → Environment): lihat [apps/api/.env.example](
 
 > 💡 Dengan Root Directory `apps/api`, Render hanya akan rebuild ketika ada perubahan di folder tersebut.
 
-> ⚠️ **Shim transisi:** selama Root Directory di Render masih kosong (setting lama), deploy tetap berjalan lewat `main.py` dan `requirements.txt` di **root repo** yang meneruskan ke `apps/api`. Setelah Root Directory diset ke `apps/api`, **hapus kedua file shim tersebut**.
+> ✅ Root Directory sudah diset ke `apps/api` (15 Jul 2026); shim transisi di root repo sudah dihapus.
 
 ## 2. Frontend — Vercel
 
@@ -33,15 +33,14 @@ Di dashboard Vercel → project `ai-sentuhtanahku-ui` → **Settings → General
 
 Environment variables: `AUTH_SECRET`, `POSTGRES_URL`, `REDIS_URL`, `BLOB_READ_WRITE_TOKEN`, dan AI Gateway key — lihat [apps/web/.env.example](../apps/web/.env.example).
 
-## 3. Migrasi dari dua repo ke monorepo (sekali jalan)
+## 3. Migrasi dari dua repo ke monorepo — ✅ SELESAI (15 Jul 2026)
 
-Riwayat git kedua repo lama sudah digabung penuh ke repo ini. Langkah finalisasi di sisi GitHub:
+Riwayat git kedua repo lama sudah digabung penuh ke repo ini, dan seluruh langkah finalisasi sudah dilakukan:
 
-1. **Push branch monorepo** ke GitHub (`git push origin monorepo`), review, lalu merge/rename ke `main`.
-2. (Opsional, direkomendasikan) **Rename repo** `ai-sentuhtanahku-api` → `ai-sentuhtanahku` di GitHub Settings, karena sekarang berisi seluruh sistem. GitHub otomatis me-redirect URL lama.
-3. Di **Vercel**: ubah project agar menunjuk ke repo monorepo ini dan set Root Directory = `apps/web`.
-4. Di **Render**: set Root Directory = `apps/api` (Build/Start command tidak berubah karena path relatif terhadap root directory).
-5. Setelah kedua deployment hijau, **arsipkan** repo lama `ai-sentuhtanahku-ui` (GitHub Settings → Archive) agar tidak ada yang push ke tempat yang salah.
+1. ✅ Branch monorepo di-merge ke `main`.
+2. ✅ Vercel menunjuk ke repo ini, Root Directory = `apps/web`.
+3. ✅ Render Root Directory = `apps/api`.
+4. ✅ Repo lama `ai-sentuhtanahku-ui` diarsipkan (read-only).
 
 ## 4. Uptime / keep-alive
 

@@ -1,3 +1,0 @@
-# Shim kompatibilitas deploy Render — transisi monorepo.
-# Hapus setelah Root Directory Render diset ke apps/api (docs/DEPLOYMENT.md).
--r apps/api/requirements.txt
