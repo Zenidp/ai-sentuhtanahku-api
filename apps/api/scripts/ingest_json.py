@@ -70,4 +70,4 @@ def ingest_json_data(json_filepath: str):
     print("\n🎉 Proses injeksi JSON selesai!")
 
 if __name__ == "__main__":
-    ingest_json_data("data_bpn.json")
+    ingest_json_data("data/data_bpn.json")
