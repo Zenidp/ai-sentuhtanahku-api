@@ -1,4 +1,5 @@
 import json
+import os
 from google import genai
 from google.genai import types  # <--- [BARU] Import tipe data khusus Gemini
 from supabase import create_client, Client
