@@ -18,6 +18,8 @@ Environment variables (Settings → Environment): lihat [apps/api/.env.example](
 
 > 💡 Dengan Root Directory `apps/api`, Render hanya akan rebuild ketika ada perubahan di folder tersebut.
 
+> ⚠️ **Shim transisi:** selama Root Directory di Render masih kosong (setting lama), deploy tetap berjalan lewat `main.py` dan `requirements.txt` di **root repo** yang meneruskan ke `apps/api`. Setelah Root Directory diset ke `apps/api`, **hapus kedua file shim tersebut**.
+
 ## 2. Frontend — Vercel
 
 Di dashboard Vercel → project `ai-sentuhtanahku-ui` → **Settings → General**:
